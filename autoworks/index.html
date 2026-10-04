@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auto Works | Car mechanic, Eastway Business Park, Limerick</title>
+<meta name="description" content="Auto Works, Unit E6, Eastway Business Park, Ballysimon Road, Limerick. Servicing, diagnostics, Pre-NCT checks. 086 897 6513.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Auto Works · Draft">
+<meta property="og:description" content="Non-binding redesign draft for the Auto Works website.">
+<meta property="og:url" content="https://bespalovmax.github.io/autoworks/">
+<meta property="og:image" content="https://bespalovmax.github.io/autoworks/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!--
+  =====================================================================
+  DRAFT / NOT COMMISSIONED
+  Redesign draft for Auto Works (autoworkslimerick.com), Limerick.
+  Not commissioned, not live, set to noindex/nofollow.
+  Made 2026-10-03 by Maksym Bespalov.
+  =====================================================================
+
+  KEPT FROM THE ORIGINAL (source: autoworkslimerick.com, home + contact)
+  - All copy is the site's own wording, unchanged: the workshop intro,
+    "Meet Your Mechanic" in full, the service list, opening hours,
+    the public-holiday note, address, phone, email.
+    US spellings ("meters", "center") are the site's and stay.
+  - "Servicing / Diagnostics / Pre-NCT Check" are the three tiles
+    under "Welcome!" on the home page.
+  - Brand red #DA0204, eyedropped from the logo file (logo2).
+    On light paper the text red is a deeper #A80203 for contrast;
+    the bright red stays on dark surfaces and decoration only.
+  - Section anchors: #home, #gallery, #location, #contact-us,
+    matching the four menu items of the original.
+
+  CHANGED
+  - Built phone first: phone number, address and hours sit above the
+    fold at 320px; a fixed Call / Directions bar stays at the bottom
+    on phones.
+  - Typography, grid, spacing. One radius system: 4px.
+  - The service list had "Post NCT Repairs" twice; shown once.
+  - Gallery captions were camera file names (IMG_6174.JPG etc.);
+    captions removed.
+
+  IMAGES
+  All photos are the business's own, taken from its site: the unit
+  front, reception, workshop, the lift and Danny's photo from
+  "Meet Your Mechanic". The logo is the site's logo file with the
+  dark background removed. No stock, no car-brand logos.
+
+  LEFT OUT (not on the site)
+  - Reviews / ratings: the site shows none. Google reviews are not the
+    site's content and are not shown. Owner could supply testimonials.
+  - Prices: none on the site.
+  - Saturday hours: the site lists Monday - Friday only.
+  =====================================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#121212;
+  --ink-2:#1d1d1d;
+  --ink-3:#2a2a2a;
+  --paper:#f2eee6;
+  --paper-2:#e8e2d6;
+  --line:#d6cebf;
+  --text:#1b1b1b;
+  --muted:#5b564e;
+  --on-dark:#f4f1ec;
+  --on-dark-muted:#b9b3aa;
+  --red:#DA0204;        /* logo red, decorative / on dark */
+  --red-text:#A80203;   /* same hue, AA on paper */
+  --r:4px;
+  --wrap:min(1180px, 100% - 2*var(--gut));
+  --gut:clamp(16px, 4vw, 40px);
+  --fs-hero:clamp(2.6rem, 1.6rem + 5vw, 5.4rem);
+  --fs-h2:clamp(2rem, 1.4rem + 2.6vw, 3.4rem);
+  --fs-body:clamp(1rem, .96rem + .2vw, 1.1rem);
+  --cond:"Barlow Condensed", "Arial Narrow", sans-serif;
+  --sans:"Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --hand:"Caveat", "Segoe Script", cursive;
+}
+*,*::before,*::after{box-sizing:border-box}
+:where(body *){min-width:0}
+:where(p,h1,h2,h3,h4,h5,h6,li,dt,dd,a,span,strong,em,b,small,blockquote,figcaption,label,td,th,summary,button){overflow-wrap:break-word}
+:where(img,svg,video,canvas,iframe){max-width:100%}
+.btn,button{max-width:100%;white-space:normal}
+@media (max-width:299px){
+  :where(body *){overflow-wrap:anywhere}
+  .btn{padding-inline:1rem}
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--text);font:400 var(--fs-body)/1.6 var(--sans)}
+img{display:block;height:auto}
+a{color:inherit}
+.wrap{width:var(--wrap);margin-inline:auto}
+.ico{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- top bar ---------- */
+.top{position:sticky;top:0;z-index:20;background:rgba(18,18,18,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid #000}
+.top .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem 1.25rem;padding-block:.55rem}
+.top .logo{flex:none}
+.top .logo img{width:clamp(132px, 26vw, 176px)}
+.nav{display:none;gap:1.6rem;font:600 .95rem/1 var(--cond);letter-spacing:.08em;text-transform:uppercase}
+.nav a{color:var(--on-dark-muted);text-decoration:none}
+.nav a:hover{color:#fff}
+.top-call{display:inline-flex;align-items:center;gap:.5rem;color:#fff;text-decoration:none;font:700 1.05rem/1 var(--cond);letter-spacing:.04em;white-space:nowrap}
+.top-call .ico{color:var(--red)}
+@media (min-width:880px){.nav{display:flex}}
+
+/* ---------- hero ---------- */
+.hero{background:var(--ink);color:var(--on-dark);position:relative}
+.hero-grid{display:grid;gap:clamp(1.5rem,4vw,3rem);padding-block:clamp(1.5rem,5vw,4.5rem) clamp(2rem,5vw,4.5rem)}
+.kicker{font:600 .9rem/1.2 var(--cond);letter-spacing:.16em;text-transform:uppercase;color:var(--on-dark-muted);margin:0 0 .6rem}
+.kicker span{color:var(--red);padding-inline:.35em}
+h1{font:800 var(--fs-hero)/.9 var(--cond);text-transform:uppercase;letter-spacing:-.005em;margin:0}
+h1 em{font-style:normal;color:var(--red)}
+.tiles{display:flex;flex-wrap:wrap;gap:.4rem;margin:1.1rem 0 0;padding:0;list-style:none}
+.tiles li{font:600 .95rem/1 var(--cond);letter-spacing:.06em;text-transform:uppercase;padding:.5rem .7rem;border:1px solid var(--ink-3);border-radius:var(--r);color:var(--on-dark)}
+
+.callcard{background:var(--ink-2);border:1px solid var(--ink-3);border-radius:var(--r);padding:clamp(1rem,3vw,1.6rem);display:grid;gap:1rem;align-content:start}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;text-decoration:none;border-radius:var(--r);font:700 1.2rem/1.1 var(--cond);letter-spacing:.05em;text-transform:uppercase;padding:1rem 1.25rem;transition:transform .15s ease, background .15s ease}
+.btn:active{transform:translateY(1px)}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:#b80103}
+.btn-big{font-size:clamp(1.5rem,1.2rem + 1.4vw,2rem);padding:1.05rem 1.2rem;width:100%}
+.btn-ghost{border:1px solid #4a4a4a;color:#fff}
+.btn-ghost:hover{background:#262626}
+.facts{display:grid;gap:.85rem;margin:0}
+.fact{display:flex;gap:.75rem;align-items:flex-start}
+.fact .ico{margin-top:.2rem;color:var(--red)}
+.fact dt{font:600 .8rem/1.2 var(--cond);letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-muted);margin:0 0 .15rem}
+.fact dd{margin:0;line-height:1.45}
+.fact dd a{text-decoration:none}
+.callcard .row{display:flex;flex-wrap:wrap;gap:.5rem}
+.callcard .row .btn{flex:1 1 9em;font-size:1rem;padding:.8rem 1rem}
+
+.hero-photo{margin:0;position:relative;border-radius:var(--r);overflow:hidden;background:var(--ink-3)}
+.hero-photo img{width:100%;aspect-ratio:16/8;object-fit:cover}
+.hero-photo figcaption{position:absolute;left:.75rem;bottom:.75rem;background:rgba(18,18,18,.86);color:#fff;font:600 .85rem/1.2 var(--cond);letter-spacing:.1em;text-transform:uppercase;padding:.45rem .65rem;border-radius:var(--r);max-width:calc(100% - 1.5rem)}
+
+@media (min-width:900px){
+  .hero-grid{grid-template-columns:1.25fr .9fr;align-items:start}
+  .hero-photo{grid-column:1 / -1}
+}
+
+/* ---------- sections ---------- */
+section{padding-block:clamp(3rem,8vw,6.5rem)}
+.eyebrow{font:600 .9rem/1.2 var(--cond);letter-spacing:.16em;text-transform:uppercase;color:var(--red-text);margin:0 0 .75rem;display:flex;align-items:center;gap:.6rem}
+.eyebrow::before{content:"";width:1.6rem;height:2px;background:var(--red);flex:none}
+h2{font:800 var(--fs-h2)/.95 var(--cond);text-transform:uppercase;margin:0 0 1.25rem;letter-spacing:-.005em}
+
+/* about */
+.about-grid{display:grid;gap:clamp(1.5rem,4vw,3.5rem)}
+.about p{margin:0 0 1em;max-width:60ch}
+.about .lead{font-size:clamp(1.15rem,1rem + .6vw,1.45rem);line-height:1.45;color:var(--text)}
+.nct{display:flex;gap:1rem;align-items:center;background:var(--ink);color:var(--on-dark);border-radius:var(--r);padding:1.1rem 1.2rem;margin-top:1.5rem;max-width:36rem}
+.nct b{font:800 clamp(2rem,1.6rem + 1.6vw,2.8rem)/1 var(--cond);color:var(--red);flex:none}
+.nct span{line-height:1.4}
+.about-photo{border-radius:var(--r);overflow:hidden}
+.about-photo img{width:100%;aspect-ratio:4/3;object-fit:cover}
+@media (min-width:900px){.about-grid{grid-template-columns:1.1fr .9fr;align-items:center}}
+
+/* mechanic letter */
+.mech{background:var(--paper-2);border-block:1px solid var(--line)}
+.letter{background:#fbf9f4;border:1px solid var(--line);border-radius:var(--r);padding:clamp(1.25rem,4vw,3rem);max-width:52rem;margin-inline:auto;box-shadow:0 1px 0 var(--line), 0 18px 40px -28px rgba(0,0,0,.35);position:relative}
+.letter::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:var(--red);border-radius:var(--r) var(--r) 0 0}
+.letter-head{display:flex;flex-wrap:wrap;gap:1rem 1.25rem;align-items:center;margin-bottom:1.5rem}
+.letter-head img{width:96px;height:96px;object-fit:cover;object-position:50% 30%;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 1px var(--line);flex:none}
+.letter-head h2{margin:0;flex:1 1 12em}
+.letter p{margin:0 0 1em}
+.letter .hi{font-size:clamp(1.15rem,1rem + .5vw,1.35rem);font-weight:500}
+.sign{font:600 clamp(2rem,1.6rem + 1.4vw,2.6rem)/1 var(--hand);color:var(--red-text);margin:1.5rem 0 0}
+.sign small{display:block;font:500 1rem/1.4 var(--sans);color:var(--muted);margin-bottom:.25rem}
+
+/* services: job sheet */
+.svc-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1rem 2rem;margin-bottom:1.75rem}
+.svc-head h2{margin:0}
+.sheet{list-style:none;margin:0;padding:0;border-top:2px solid var(--text);display:grid;grid-template-columns:1fr}
+.sheet li{display:flex;align-items:center;gap:.9rem;padding:.95rem .25rem;border-bottom:1px solid var(--line);font:600 clamp(1.1rem,1rem + .5vw,1.35rem)/1.2 var(--cond);letter-spacing:.02em;text-transform:uppercase;overflow-wrap:anywhere}
+.sheet .n{font:600 .85rem/1 var(--cond);color:var(--muted);letter-spacing:.06em;flex:none;width:1.6rem}
+.sheet .tick{margin-left:auto;flex:none;width:1.4rem;height:1.4rem;border:2px solid var(--text);border-radius:3px;display:grid;place-items:center}
+.sheet .tick svg{width:.9rem;height:.9rem;stroke:var(--red);stroke-width:3.5;fill:none}
+@media (min-width:760px){.sheet{grid-template-columns:1fr 1fr;column-gap:3rem}}
+
+/* gallery */
+.gallery{background:var(--ink);color:var(--on-dark)}
+.gallery .eyebrow{color:#ff5a5a}
+.strip{display:flex;gap:.75rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.75rem;margin-top:1.5rem;scrollbar-width:thin}
+.strip figure{flex:none;width:min(82%,520px);margin:0;scroll-snap-align:start;border-radius:var(--r);overflow:hidden;background:var(--ink-3)}
+.strip img{width:100%;aspect-ratio:16/10;object-fit:cover}
+@media (min-width:1000px){
+  .strip{display:grid;grid-template-columns:repeat(4,1fr);overflow:visible}
+  .strip figure{width:auto}
+  .strip img{aspect-ratio:4/5}
+}
+
+/* location */
+.loc-grid{display:grid;gap:clamp(1.5rem,4vw,3rem)}
+.panel{background:#fbf9f4;border:1px solid var(--line);border-radius:var(--r);padding:clamp(1.25rem,3vw,2rem)}
+.panel h3{font:700 1rem/1.2 var(--cond);letter-spacing:.14em;text-transform:uppercase;margin:0 0 .5rem;color:var(--red-text)}
+.panel p{margin:0}
+.panel + .panel{margin-top:1rem}
+.addr{font:700 clamp(1.5rem,1.2rem + 1.2vw,2.1rem)/1.15 var(--cond);text-transform:uppercase}
+.hours{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.25rem 1rem;font-weight:600;font-size:1.1rem;padding-bottom:.6rem;border-bottom:1px solid var(--line);margin-bottom:.6rem}
+.note{color:var(--muted);font-size:.95rem}
+.contact-list{display:grid;gap:.6rem;margin-top:.25rem}
+.contact-list a{display:flex;align-items:center;gap:.7rem;text-decoration:none;font-weight:600;overflow-wrap:anywhere}
+.contact-list a .ico{color:var(--red-text)}
+.contact-list a:hover span{text-decoration:underline}
+.loc-photo{border-radius:var(--r);overflow:hidden}
+.loc-photo img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.loc-actions{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem}
+.loc-actions .btn{flex:1 1 11em}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:#000}
+@media (min-width:900px){.loc-grid{grid-template-columns:1fr 1fr;align-items:start}}
+
+/* footer */
+footer{background:var(--ink);color:var(--on-dark-muted);padding:2.5rem 0 calc(2.5rem + 72px)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between;align-items:center}
+footer img{width:140px}
+footer p{margin:0;font-size:.95rem}
+@media (min-width:760px){footer{padding-bottom:2.5rem}}
+
+/* mobile action bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;gap:.5rem;padding:.6rem var(--gut) calc(.6rem + env(safe-area-inset-bottom));background:rgba(18,18,18,.96);border-top:1px solid #000}
+.bar .btn{flex:1 1 0;font-size:1.05rem;padding:.85rem .5rem}
+@media (min-width:760px){.bar{display:none}}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><path d="M3 11l19-9-9 19-2-8-8-2z"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#home" aria-label="Auto Works, home"><img src="img/logo.webp" alt="Auto Works - Service | Repairs | Diagnostics" width="800" height="342"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#home">Home</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#location">Location</a>
+      <a href="#contact-us">Contact us</a>
+    </nav>
+    <a class="top-call" href="tel:+353868976513"><svg class="ico"><use href="#i-phone"/></svg>086 897 6513</a>
+  </div>
+</header>
+
+<main>
+<div class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Auto Works<br><em>Limerick</em></h1>
+      <ul class="tiles" aria-label="Main services">
+        <li>Servicing</li>
+        <li>Diagnostics</li>
+        <li>Pre-NCT Check</li>
+      </ul>
+    </div>
+
+    <div class="callcard">
+      <a class="btn btn-red btn-big" href="tel:+353868976513"><svg class="ico"><use href="#i-phone"/></svg>086 897 6513</a>
+      <dl class="facts">
+        <div class="fact">
+          <svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg>
+          <div><dt>Address</dt><dd>Unit E6, Eastway Business Park,<br>Ballysimon Road, Limerick. V94P2H7</dd></div>
+        </div>
+        <div class="fact">
+          <svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg>
+          <div><dt>Opening Hours</dt><dd>Monday - Friday: 9:30am - 5.00pm</dd></div>
+        </div>
+      </dl>
+      <div class="row">
+        <a class="btn btn-ghost" href="https://maps.app.goo.gl/UXDcD2AezmcsTs5j9" target="_blank" rel="noopener"><svg class="ico"><use href="#i-route"/></svg>Directions</a>
+        <a class="btn btn-ghost" href="mailto:auto_works@outlook.com"><svg class="ico"><use href="#i-mail"/></svg>Email</a>
+      </div>
+    </div>
+
+    <figure class="hero-photo">
+      <img src="img/unit-e6.webp" alt="Auto Works, Unit E6, Eastway Business Park: red roller door and Auto Works sign" width="1600" height="728" fetchpriority="high">
+      <figcaption>Unit E6, Eastway Business Park</figcaption>
+    </figure>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="rv">
+      <p class="eyebrow">Welcome!</p>
+      <p class="lead">Auto Works is a fully equipped workshop with modern equipment and Snap-On diagnostic tools which allows us to offer a one-stop shop for all your vehicle requirements.</p>
+      <p>Our goal is to provide you with the quality service you need at a cost within your budget and we pride ourselves in being honest and reliable. We service all makes and models of cars and whatever the problem you can be guaranteed we will fix it.</p>
+      <div class="nct">
+        <b>100m</b>
+        <span>We are located just 100 meters from the Limerick city NCT test center.</span>
+      </div>
+    </div>
+    <figure class="about-photo rv" style="margin:0">
+      <img src="img/workshop-bay.webp" alt="Inside the Auto Works workshop" width="1400" height="637" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<section class="mech" id="mechanic">
+  <div class="wrap">
+    <article class="letter rv">
+      <div class="letter-head">
+        <img src="img/danny.webp" alt="Danny" width="136" height="110" loading="lazy">
+        <h2>Meet Your Mechanic</h2>
+      </div>
+      <p class="hi">Hi, my name is Danny. I would like to give you an overview of both myself and the experience and skills I have gained since becoming a mechanic.</p>
+      <p>I have been working as a mechanic for 17 years and I love what I do. I grew up in Australia and this is where I became trade qualified. I have worked as a mechanic in Australia, New Zealand and now Ireland. I have worked on all makes and models from Nissan, Ford and Audi to Kia, Hyundai and Toyota and everything in between but I have always treated each job with equal importance. I am highly competent in all types of servicing requirements including all aspects of engine diagnostics, automatic transmission servicing, etc.</p>
+      <p>I am honest and hardworking and I hope from the skills I have gained I can give as much help as possible when it comes to your automotive repairs. Please give me a call with any queries or even just to ask the same question every person in Ireland asks……why am I living here and not Australia!</p>
+      <p class="sign"><small>Thanks</small>Danny</p>
+    </article>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="svc-head rv">
+      <div>
+        <p class="eyebrow">What we do</p>
+        <h2>Our Services</h2>
+      </div>
+    </div>
+    <!-- Order and wording as on the site. "Post NCT Repairs" appears twice there; shown once. -->
+    <ol class="sheet rv">
+      <li><span class="n">01</span>General Mechanical Works<span class="tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></li>
+      <li><span class="n">02</span>Servicing<span class="tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></li>
+      <li><span class="n">03</span>Computer Diagnostics<span class="tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></li>
+      <li><span class="n">04</span>Pre-NCT Checks<span class="tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></li>
+      <li><span class="n">05</span>Pre-purchase Car Checks<span class="tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></li>
+      <li><span class="n">06</span>Brake Repair Specialist<span class="tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></li>
+      <li><span class="n">07</span>Mufflers and Exhaust systems<span class="tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></li>
+      <li><span class="n">08</span>Steering and Suspension<span class="tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></li>
+      <li><span class="n">09</span>Head Light Alignment / Focusing<span class="tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></li>
+      <li><span class="n">10</span>4x4 Specialist<span class="tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></li>
+      <li><span class="n">11</span>Post NCT Repairs<span class="tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></li>
+      <li><span class="n">12</span>Timing belts &amp; water pumps<span class="tick"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <p class="eyebrow rv">Gallery</p>
+    <h2 class="rv">The workshop</h2>
+    <div class="strip" tabindex="0" aria-label="Photos of the workshop, scroll sideways">
+      <figure><img src="img/reception.webp" alt="Auto Works reception" width="1400" height="637" loading="lazy"></figure>
+      <figure><img src="img/workshop-lift.webp" alt="A car on the lift in the workshop" width="1400" height="637" loading="lazy"></figure>
+      <figure><img src="img/workshop-bay.webp" alt="Workshop bay with cars inside" width="1400" height="637" loading="lazy"></figure>
+      <figure><img src="img/unit-e6-open.webp" alt="Unit E6 with the roller door open" width="900" height="629" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section id="location">
+  <div class="wrap loc-grid">
+    <div class="rv">
+      <p class="eyebrow">Location</p>
+      <h2>Find us</h2>
+      <div class="panel">
+        <h3>Address</h3>
+        <p class="addr">Unit E6, Eastway Business Park, Ballysimon Road, Limerick. V94P2H7</p>
+        <div class="loc-actions">
+          <a class="btn btn-dark" href="https://maps.app.goo.gl/UXDcD2AezmcsTs5j9" target="_blank" rel="noopener"><svg class="ico"><use href="#i-route"/></svg>Open in Maps</a>
+        </div>
+      </div>
+      <div class="panel" id="contact-us">
+        <h3>Opening Hours</h3>
+        <p class="hours"><span>Mon - Fri</span><span>9:30am - 5.00pm</span></p>
+        <p class="note">*Auto Works is closed the Tuesday of each public holiday</p>
+      </div>
+      <div class="panel">
+        <h3>Contact us</h3>
+        <div class="contact-list">
+          <a href="tel:+353868976513"><svg class="ico"><use href="#i-phone"/></svg><span>086 897 6513</span></a>
+          <a href="mailto:auto_works@outlook.com"><svg class="ico"><use href="#i-mail"/></svg><span>auto_works@outlook.com</span></a>
+          <a href="https://www.facebook.com/autoworkslimerick" target="_blank" rel="noopener"><svg class="ico"><use href="#i-fb"/></svg><span>facebook.com/autoworkslimerick</span></a>
+        </div>
+      </div>
+    </div>
+    <figure class="loc-photo rv" style="margin:0">
+      <img src="img/unit-e6-open.webp" alt="The front of Unit E6, Eastway Business Park" width="900" height="629" loading="lazy">
+    </figure>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo.webp" alt="Auto Works" width="800" height="342" loading="lazy">
+    <p>Unit E6, Eastway Business Park, Ballysimon Road, Limerick. V94P2H7 · 086 897 6513</p>
+  </div>
+</footer>
+
+<div class="bar" aria-label="Quick actions">
+  <a class="btn btn-red" href="tel:+353868976513"><svg class="ico"><use href="#i-phone"/></svg>Call</a>
+  <a class="btn btn-ghost" href="https://maps.app.goo.gl/UXDcD2AezmcsTs5j9" target="_blank" rel="noopener"><svg class="ico"><use href="#i-route"/></svg>Directions</a>
+</div>
+
+<script>
+(function(){
+  var items = document.querySelectorAll('.rv');
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    items.forEach(function(el){ el.classList.add('in'); }); return;
+  }
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.08, rootMargin:'0px 0px -6% 0px'});
+  items.forEach(function(el){ io.observe(el); });
+})();
+</script>
+<!-- Visit counter: GoatCounter, no cookies, no stored IP address. Counted under the page path /autoworks/. -->
+<script data-goatcounter="https://satort25.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

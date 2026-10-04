@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en-AU" data-theme="light">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Garry The Plumber</title>
+<meta name="description" content="Redesign draft for Garry The Plumber, 125 Kangaroo Rd, Oakleigh VIC 3166.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Garry The Plumber · Draft">
+<meta property="og:description" content="Non-binding redesign draft for the Garry The Plumber website.">
+<meta property="og:url" content="https://bespalovmax.github.io/garry/">
+<meta property="og:image" content="https://bespalovmax.github.io/garry/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!--
+  ===========================================================================
+  REDESIGN DRAFT. This is not the Garry The Plumber website.
+  A non-binding proposal. No engagement, not for publication.
+
+  CONTENT
+  Every sentence, service, bullet and suburb on this page is copied from
+  garrytheplumber.net.au. Nothing is rewritten and nothing is invented.
+  All 14 images are the business's own: 13 job photographs supplied by the
+  owner's site and Facebook page, plus their Master Plumbers badge and their
+  own logo file. No stock photography appears anywhere on this page.
+
+  WHAT IS PRESERVED
+    - The copy, word for word.
+    - Section order, and every anchor id: #about-id, #services-id,
+      #gas-fitters-id, #blocked-drains-id, #roof+gutters-id, #contact-id.
+      Existing links and muscle memory still land where they used to.
+    - The conversion targets. Both phone numbers, the email address, and the
+      ServiceM8 Request Booking button on its original URL, unchanged.
+    - The brand colours, eyedropped from their logo file: cyan #29ABE2 and
+      orange #F7931E. White on #29ABE2 measures 2.6:1, so the cyan stays
+      decorative and a deeper tone of the same hue, #0E4A6E, carries the
+      text at 8.9:1. The deep navy #0B2B47 is lifted from a slide background
+      already on their own page. Dark text on the orange measures 7.2:1.
+
+  WHAT CHANGED
+    - THE ENQUIRY FORM NOW EXISTS. The live contact section says "Contact us
+      about what you want to achieve by phone, email or filling in the
+      enquiry form". The live page has no form, input or textarea anywhere in
+      it. That sentence is kept word for word here, and all three ways of
+      getting in touch now work. In this draft the form composes the message
+      and hands it to the visitor's mail client; on their own hosting it
+      would post server-side instead.
+    - No broken images. On the live page four images fail to load, and three
+      of them print the words "Image is not available" on screen, one of
+      those on the slide that loads first.
+    - The ten service tiles in the live slider link to
+      garrytheplumber.net.au/GoToSlide[1], [2] and [4], which are not pages.
+      Here the same ten tiles link to the sections they describe.
+    - The footer carries the business. The live footer's only line of text is
+      the copyright symbol followed by a credit to two web developers, and
+      names Garry The Plumber nowhere.
+    - Typography, grid, spacing and one radius system. The five <h1> elements
+      on the live page become one.
+    - A phone button fixed to the bottom of the screen on mobile.
+
+  NOT SHOWN, DELIBERATELY
+  A founding year, opening hours, a star rating, a review count, staff
+  numbers and staff names are absent from their site, so they are absent
+  here. There are no testimonials on their site, so there is no testimonial
+  section. "ESTABLISHED 1891" on the Master Plumbers badge is the
+  association's year and is not repeated anywhere as the business's own.
+  Every figure on this page is "25 years", which is their own wording.
+
+  PLACEHOLDERS: none. Nothing on this page is waiting to be filled in.
+  ===========================================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+
+<style>
+/* ---------- tokens -----------------------------------------------------
+   Cyan #29ABE2 and orange #F7931E are eyedropped from the logo file.
+   Cyan never carries text on light ground: white on it is 2.6:1. #0E4A6E is
+   the same hue taken deeper and does the reading. #0B2B47 is their own
+   slide background colour.
+   ---------------------------------------------------------------------- */
+:root{
+  --cyan:#29ABE2;
+  --navy:#0E4A6E;
+  --navy-deep:#0B2B47;
+  --navy-darkest:#072033;
+  --orange:#F7931E;
+  --ink:#14202E;
+  --muted:#51606F;
+  --paper:#F5F8FA;
+  --card:#FFFFFF;
+  --line:rgba(20,32,46,.12);
+  --r:14px;
+  --maxw:1180px;
+  --pad:clamp(18px,4.5vw,56px);
+}
+:root[data-theme="dark"]{
+  --ink:#E9EEF5; --muted:#9FB0C2; --paper:#0A1420; --card:#101E30;
+  --line:rgba(233,238,245,.15); --navy:#7FC9EE;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme]){
+    --ink:#E9EEF5; --muted:#9FB0C2; --paper:#0A1420; --card:#101E30;
+    --line:rgba(233,238,245,.15); --navy:#7FC9EE;
+  }
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Plus Jakarta Sans","Segoe UI",system-ui,sans-serif;
+  font-size:17px; line-height:1.62; letter-spacing:-.008em;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block; max-width:100%; height:auto}
+h1,h2,h3{margin:0; font-weight:800; letter-spacing:-.03em; line-height:1.12}
+p{margin:0}
+ul,ol{margin:0; padding:0; list-style:none}
+.wrap{max-width:var(--maxw); margin-inline:auto; padding-inline:var(--pad)}
+.ms{font-family:"Material Symbols Outlined"; font-weight:400; line-height:1;
+    letter-spacing:normal; white-space:nowrap; font-feature-settings:'liga'; display:none}
+.icons-ready .ms{display:inline-block}
+:where(a,button,input,select,textarea,summary):focus-visible{outline:2px solid var(--orange); outline-offset:3px}
+.sr{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
+    clip:rect(0 0 0 0); white-space:nowrap; border:0}
+
+/* ---------- buttons ---------------------------------------------------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.45rem;
+  padding:.88rem 1.5rem; border-radius:999px; border:1.5px solid transparent;
+  font:inherit; font-size:.97rem; font-weight:700; text-decoration:none;
+  cursor:pointer; white-space:nowrap;
+  transition:transform .16s cubic-bezier(.16,1,.3,1), background-color .16s, color .16s, border-color .16s;
+}
+.btn-orange{background:var(--orange); color:#14202E}
+.btn-orange:hover{transform:translateY(-2px)}
+.btn-orange:active{transform:translateY(0) scale(.985)}
+.btn-ghost{border-color:rgba(255,255,255,.55); color:#fff; background:transparent}
+.btn-ghost:hover{background:rgba(255,255,255,.12); transform:translateY(-2px)}
+.btn-line{border-color:var(--line); color:var(--navy); background:var(--card)}
+.btn-line:hover{border-color:var(--cyan); transform:translateY(-2px)}
+
+/* ---------- header ----------------------------------------------------- */
+.hdr{position:sticky; top:0; z-index:50; background:var(--card); border-bottom:1px solid var(--line)}
+.hdr .wrap{display:flex; flex-wrap:wrap; align-items:center; gap:.35rem 1rem; min-height:66px}
+/* The number is nowrap, so when the row cannot hold logo and number it wraps
+   under the logo. Without the wrap, min-width:0 shrinks the link's box and the
+   digits paint past it: the box measures clean while the page overflows. */
+.brand img{height:34px; width:auto}
+.nav{display:none; gap:1.45rem; margin-left:auto; font-size:.9rem; font-weight:600}
+.nav a{color:var(--muted); text-decoration:none}
+.nav a:hover{color:var(--navy)}
+.hdr-tel{display:inline-flex; align-items:center; gap:.4rem; margin-left:auto;
+  font-weight:800; font-size:.95rem; color:var(--navy); text-decoration:none; white-space:nowrap}
+.hdr-tel .ms{font-size:19px}
+.hdr .btn{display:none}
+@media (min-width:980px){
+  .nav{display:flex} .hdr-tel{margin-left:0} .hdr .btn{display:inline-flex; padding:.6rem 1.15rem; font-size:.9rem}
+}
+
+/* ---------- hero ------------------------------------------------------- */
+.hero{position:relative; background:var(--navy-darkest); border-radius:0 0 28px 28px}
+/* The clip belongs to the photo, not to the section: on .hero it also
+   cropped hero content silently. */
+.hero-bg{position:absolute; inset:0; border-radius:inherit; overflow:hidden}
+.hero-bg img{width:100%; height:100%; object-fit:cover; object-position:56% 42%}
+.hero-bg::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(100deg, rgba(7,32,51,.95) 0%, rgba(7,32,51,.84) 44%, rgba(7,32,51,.34) 100%);
+}
+.hero-in{position:relative; padding-block:clamp(48px,9vw,96px) clamp(26px,4vw,40px)}
+.eyebrow{font-size:.76rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--orange)}
+.hero h1{margin-top:.9rem; color:#fff; font-size:clamp(1.6rem,6.6vw,3.2rem); max-width:19ch}
+.hero .lede{margin-top:1.1rem; color:rgba(255,255,255,.88); font-size:clamp(1rem,2.3vw,1.14rem); max-width:52ch}
+.hero-cta{display:flex; flex-wrap:wrap; gap:.7rem; margin-top:1.8rem}
+.strip{position:relative; display:grid; gap:1px; background:rgba(255,255,255,.18);
+  border-top:1px solid rgba(255,255,255,.18); margin-top:clamp(30px,5vw,56px)}
+@media (min-width:640px){ .strip{grid-template-columns:repeat(2,1fr)} }
+@media (min-width:1000px){ .strip{grid-template-columns:repeat(4,1fr)} }
+.strip div{background:rgba(7,32,51,.74); padding:1.05rem clamp(18px,4.5vw,28px); display:flex; gap:.7rem; align-items:flex-start}
+.strip .st{min-width:0}
+.strip .ms{font-size:22px; color:var(--orange); flex:none; margin-top:.1rem}
+.strip b{display:block; color:#fff; font-size:.95rem; font-weight:700; line-height:1.3}
+.strip .sub{display:block; color:rgba(255,255,255,.7); font-size:.83rem; margin-top:.15rem}
+
+/* ---------- sections ---------------------------------------------------- */
+.sec{padding-block:clamp(44px,7vw,88px)}
+.head{text-align:center; max-width:62ch; margin-inline:auto}
+.head h2{font-size:clamp(1.6rem,4.4vw,2.4rem); color:var(--navy)}
+.head p{margin-top:.8rem; color:var(--muted)}
+.rule{display:flex; align-items:center; justify-content:center; gap:.9rem; margin-bottom:.7rem}
+.rule::before,.rule::after{content:""; width:34px; height:1px; background:var(--orange)}
+
+/* ---------- ten tiles: every one links to a section that exists --------- */
+.tiles{display:grid; gap:12px; margin-top:clamp(24px,4vw,40px);
+  grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (min-width:700px){ .tiles{grid-template-columns:repeat(5,minmax(0,1fr))} }
+.tiles a{
+  display:flex; flex-direction:column; align-items:center; gap:.55rem; text-align:center;
+  padding:18px 10px; background:var(--card); border:1px solid var(--line);
+  border-radius:var(--r); text-decoration:none; color:var(--ink);
+  font-size:.86rem; font-weight:700; line-height:1.25;
+  transition:transform .16s cubic-bezier(.16,1,.3,1), border-color .16s;
+}
+.tiles a:hover{transform:translateY(-3px); border-color:var(--cyan)}
+.tiles .ms{font-size:26px; color:var(--cyan)}
+
+/* ---------- services: verbatim bullet list ----------------------------- */
+.svc{display:grid; gap:14px; margin-top:clamp(26px,4vw,44px); grid-template-columns:1fr}
+@media (min-width:760px){ .svc{grid-template-columns:repeat(2,1fr)} }
+@media (min-width:1080px){ .svc{grid-template-columns:repeat(3,1fr)} }
+.svc li{
+  display:flex; gap:.75rem; align-items:flex-start;
+  background:var(--card); border:1px solid var(--line); border-radius:var(--r); padding:18px 20px;
+  font-size:.95rem; line-height:1.5;
+}
+.svc .ms{font-size:21px; color:var(--cyan); flex:none; margin-top:.15rem}
+
+/* ---------- detail blocks: copy plus one of their photos --------------- */
+.det{display:grid; gap:clamp(22px,4vw,48px); align-items:start}
+@media (min-width:900px){
+  .det{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .det.flip .det-fig{order:2}
+  .det-fig{position:sticky; top:86px}
+}
+.det-fig{margin:0}
+.det-fig img{border-radius:var(--r); width:100%; aspect-ratio:4/3; object-fit:cover}
+.det-fig figcaption{margin-top:.6rem; font-size:.85rem; color:var(--muted)}
+.det h2{font-size:clamp(1.5rem,4.2vw,2.2rem); color:var(--navy)}
+.det p{margin-top:1rem; color:var(--muted)}
+.det ul{margin-top:1.1rem; display:grid; gap:.5rem}
+.det li{display:flex; gap:.6rem; align-items:flex-start; font-size:.94rem; color:var(--ink)}
+.det li .ms{font-size:19px; color:var(--cyan); flex:none; margin-top:.15rem}
+.det ul.two-col{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:1.6rem}
+@media (max-width:560px){ .det ul.two-col{grid-template-columns:1fr} }
+
+/* ---------- reasons band ------------------------------------------------ */
+.band{background:var(--navy-deep); color:#fff}
+.band .head h2{color:#fff}
+.band .head p{color:rgba(255,255,255,.75)}
+.reasons{display:grid; gap:14px; margin-top:clamp(26px,4vw,44px); grid-template-columns:1fr}
+@media (min-width:640px){ .reasons{grid-template-columns:repeat(2,1fr)} }
+@media (min-width:1000px){ .reasons{grid-template-columns:repeat(3,1fr)} }
+.reasons div{background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16);
+  border-radius:var(--r); padding:20px; display:flex; gap:.7rem; align-items:center}
+.reasons .ms{font-size:24px; color:var(--orange); flex:none}
+.reasons b{font-size:.98rem; font-weight:700}
+
+/* ---------- gallery: captions describe only what is in the frame ------- */
+.gal{display:grid; gap:16px; margin-top:clamp(26px,4vw,44px); grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (min-width:760px){ .gal{grid-template-columns:repeat(3,minmax(0,1fr))} }
+@media (min-width:1080px){ .gal{grid-template-columns:repeat(4,minmax(0,1fr))} }
+.gal figure{margin:0; background:var(--card); border:1px solid var(--line); border-radius:var(--r); overflow:hidden}
+.gal img{width:100%; aspect-ratio:4/5; object-fit:cover}
+.gal figcaption{padding:13px 15px 15px; font-size:.88rem; font-weight:600; color:var(--ink); line-height:1.35}
+
+/* ---------- about ------------------------------------------------------- */
+.about{display:grid; gap:clamp(24px,4vw,48px); align-items:center}
+@media (min-width:900px){ .about{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)} }
+.about h2{font-size:clamp(1.5rem,4.2vw,2.2rem); color:var(--navy)}
+.about p{margin-top:1rem; color:var(--muted)}
+.about-aside{display:flex; flex-direction:column; gap:1.2rem; align-items:center; text-align:center}
+.about-aside img.van{border-radius:var(--r); width:100%}
+.badge-row{display:flex; gap:1.1rem; align-items:center; justify-content:center;
+  background:var(--card); border:1px solid var(--line); border-radius:var(--r); padding:18px 20px; width:100%}
+.badge-row img{height:92px; width:auto; flex:none}
+.badge-row span{font-size:.9rem; color:var(--muted); text-align:left; line-height:1.45}
+.chips{display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1.4rem}
+.chip{display:inline-flex; align-items:center; gap:.4rem; padding:.45rem .9rem; background:var(--card);
+  border:1px solid var(--line); border-radius:999px; font-size:.85rem; font-weight:600; color:var(--ink)}
+.chip .ms{font-size:17px; color:var(--navy)}
+
+/* ---------- contact + the enquiry form --------------------------------- */
+.contact{background:var(--card); border-top:1px solid var(--line)}
+.c-grid{display:grid; gap:clamp(24px,4vw,48px); margin-top:1.6rem; align-items:start}
+@media (min-width:900px){ .c-grid{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)} }
+.dial{display:inline-flex; align-items:center; gap:.6rem; text-decoration:none; color:var(--navy);
+  font-size:clamp(1.5rem,5.4vw,2.05rem); font-weight:800; letter-spacing:-.03em}
+.dial:hover{text-decoration:underline; text-underline-offset:6px}
+.crow{display:flex; gap:.8rem; margin-top:1.1rem; color:var(--muted); font-size:.97rem}
+.crow .ms{font-size:20px; color:var(--navy); flex:none; margin-top:.15rem}
+.crow strong{display:block; color:var(--ink); font-weight:700}
+.crow a{color:inherit}
+
+.form-card{background:var(--paper); border:1px solid var(--line); border-radius:var(--r); padding:clamp(20px,3.4vw,30px)}
+.form-card h3{font-size:1.15rem; color:var(--navy)}
+.form-card > p{margin-top:.45rem; font-size:.92rem; color:var(--muted)}
+.fg{display:grid; gap:14px; margin-top:1.3rem}
+@media (min-width:600px){ .fg.two{grid-template-columns:repeat(2,minmax(0,1fr))} }
+.field label{display:block; font-size:.84rem; font-weight:700; color:var(--ink); margin-bottom:.35rem}
+.field .req{color:var(--orange)}
+.field input,.field select,.field textarea{
+  width:100%; font:inherit; font-size:.95rem; color:var(--ink);
+  background:var(--card); border:1.5px solid var(--line); border-radius:10px;
+  padding:.7rem .85rem; transition:border-color .16s;
+}
+.field textarea{min-height:118px; resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--cyan); outline:none}
+.field input:focus-visible,.field select:focus-visible,.field textarea:focus-visible{outline:2px solid var(--orange); outline-offset:2px}
+.field .err{display:none; margin-top:.3rem; font-size:.81rem; font-weight:600; color:#C0392B}
+.field.bad input,.field.bad select,.field.bad textarea{border-color:#C0392B}
+.field.bad .err{display:block}
+:root[data-theme="dark"] .field .err{color:#FF8A7A}
+@media (prefers-color-scheme:dark){ :root:not([data-theme]) .field .err{color:#FF8A7A} }
+.form-actions{display:flex; flex-wrap:wrap; gap:.8rem; align-items:center; margin-top:1.4rem}
+.form-actions .btn{flex:1 1 auto}
+.form-note{margin-top:1rem; font-size:.82rem; color:var(--muted)}
+.or{display:flex; align-items:center; gap:.9rem; margin:1.5rem 0 1.1rem; color:var(--muted); font-size:.82rem;
+  font-weight:700; letter-spacing:.12em; text-transform:uppercase}
+.or::before,.or::after{content:""; height:1px; background:var(--line); flex:1}
+.sm8{display:flex; flex-wrap:wrap; gap:.9rem; align-items:center; justify-content:space-between}
+.sm8 p{font-size:.88rem; color:var(--muted); max-width:34ch}
+
+.sent{display:none; margin-top:1.3rem; background:var(--card); border:1.5px solid var(--cyan);
+  border-radius:12px; padding:20px}
+.sent.on{display:block}
+.sent h4{margin:0; font-size:1rem; color:var(--navy); display:flex; align-items:center; gap:.5rem}
+.sent h4 .ms{font-size:21px; color:var(--cyan)}
+.sent p{margin-top:.6rem; font-size:.9rem; color:var(--muted)}
+.sent pre{margin:.9rem 0 0; padding:14px; background:var(--paper); border:1px solid var(--line);
+  border-radius:10px; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.82rem;
+  line-height:1.55; white-space:pre-wrap; word-break:break-word; color:var(--ink)}
+.sent .btn{margin-top:.9rem}
+
+/* ---------- footer: the business, not the developer -------------------- */
+.ft{background:var(--navy-darkest); color:rgba(255,255,255,.75); padding-block:34px 96px; font-size:.88rem}
+@media (min-width:760px){ .ft{padding-bottom:34px} }
+.ft-top{display:flex; flex-wrap:wrap; gap:1.2rem 2rem; align-items:center; justify-content:space-between}
+.ft-top img{height:34px; width:auto}
+.ft-nav{display:flex; flex-wrap:wrap; gap:.7rem 1.3rem}
+.ft a{color:rgba(255,255,255,.78); text-decoration:none}
+.ft a:hover{color:#fff}
+.ft-mid{margin-top:1.6rem; display:grid; gap:.45rem; font-size:.9rem}
+.ft-mid strong{color:#fff; font-weight:700}
+.ft-btm{margin-top:1.6rem; padding-top:1.2rem; border-top:1px solid rgba(255,255,255,.15);
+  display:flex; flex-wrap:wrap; gap:.5rem 1.4rem; justify-content:space-between; font-size:.83rem}
+.ft-note{margin-top:1rem; font-size:.78rem; color:rgba(255,255,255,.5); max-width:78ch}
+
+/* ---------- sticky call button, mobile only ----------------------------- */
+.callbar{
+  position:fixed; left:0; right:0; bottom:0; z-index:60;
+  padding:10px var(--pad) calc(10px + env(safe-area-inset-bottom));
+  background:color-mix(in srgb, var(--card) 92%, transparent);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  border-top:1px solid var(--line);
+}
+.callbar .btn{width:100%; padding:1rem}
+@media (min-width:760px){ .callbar{display:none} }
+
+@media (prefers-reduced-motion:no-preference){
+  .rv{opacity:0; transform:translateY(16px); transition:opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1)}
+  .rv.in{opacity:1; transform:none}
+}
+@media (prefers-reduced-motion:reduce){ *,*::before,*::after{animation:none!important; transition:none!important} }
+
+/* ---------- mobile safety net, identical in every demo -----------------
+   Swept at every CSS width from 160 to 440, not at a handful of device
+   widths. A phone's page zoom shrinks the CSS viewport to device width
+   divided by the zoom, so a 375 phone at 175% lays the page out at 214px:
+   any width in that range is a real screen. The test is that no element
+   box and no text run crosses either edge of the layout viewport
+   (document.documentElement.clientWidth), with every horizontal clip
+   neutralised first. A missing scrollbar proves nothing: overflow:hidden
+   on an ancestor turns overflow into a silent crop.
+
+   min-width on a flex or grid item defaults to auto, so the item refuses
+   to shrink below its content's min-content width. One long unbreakable
+   string - an email address, a URL, a long compound word - then becomes a
+   hard floor for its whole column and pushes the page past the viewport.
+   :where() holds specificity at 0, so every rule above still wins, and on
+   an ordinary block box min-width:auto already computes to 0: this changes
+   flex and grid items only. Anything that must keep its size still says
+   flex:none.
+   ---------------------------------------------------------------------- */
+:where(body *){min-width:0}
+:where(p,h1,h2,h3,h4,h5,h6,li,dt,dd,a,span,strong,em,b,small,blockquote,
+       figcaption,label,td,th,summary,button){overflow-wrap:break-word}
+:where(img,svg,video,canvas,iframe){max-width:100%}
+/* A button label wraps rather than pushing the page sideways. nowrap above
+   is right at normal text size and overflows at a phone's larger setting. */
+.btn,button{max-width:100%; white-space:normal}
+/* Below 300 CSS px, which a phone reaches only through zoom, one long word
+   must not set the width of its column: break-word leaves min-content
+   alone, anywhere lowers it. Pill padding eases for the same reason. */
+@media (max-width:299px){
+  :where(body *){overflow-wrap:anywhere}
+  .btn{padding-inline:1rem}
+}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="img/gtp-logo.webp" alt="Garry The Plumber" width="600" height="192"></a>
+    <nav class="nav">
+      <a href="#about-id">About</a>
+      <a href="#services-id">Services</a>
+      <a href="#blocked-drains-id">Blocked drains</a>
+      <a href="#gas-fitters-id">Gas fitters</a>
+      <a href="#roof+gutters-id">Roof + gutters</a>
+      <a href="#contact-id">Contact</a>
+    </nav>
+    <a class="hdr-tel" href="tel:+611300135897"><span class="ms" aria-hidden="true">call</span>1300 135 897</a>
+    <a class="btn btn-orange" href="#enquiry">Send an enquiry</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero on one of their own photographs. Headline and paragraph verbatim. -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="img/hero-slate-roof.webp" alt="A roof plumber fixing capping along the ridge of a slate roof" width="1440" height="1185" fetchpriority="high">
+    </div>
+    <div class="hero-in">
+      <div class="wrap">
+        <p class="eyebrow">Ashburton &middot; Hughesdale &middot; Camberwell &middot; Malvern &middot; Glen Iris &middot; Oakleigh</p>
+        <h1>Local Plumbers, Services and Repairs</h1>
+        <p class="lede">We provide professional plumbing services for your house or apartment including toilet plumbing, kitchen plumbing, blocked drains, leaking taps and much more.</p>
+        <div class="hero-cta">
+          <a class="btn btn-orange" href="#enquiry"><span class="ms" aria-hidden="true">edit_note</span>Send an enquiry</a>
+          <a class="btn btn-ghost" href="tel:+611300135897"><span class="ms" aria-hidden="true">call</span>1300 135 897</a>
+        </div>
+      </div>
+      <div class="strip">
+        <div><span class="ms" aria-hidden="true">workspace_premium</span><span class="st"><b>25 years experience</b><span class="sub">Across Melbourne</span></span></div>
+        <div><span class="ms" aria-hidden="true">verified_user</span><span class="st"><b>Masters Plumbers Association</b><span class="sub">We are a member</span></span></div>
+        <div><span class="ms" aria-hidden="true">local_fire_department</span><span class="st"><b>Both water and gas</b><span class="sub">Burst pipes, either system</span></span></div>
+        <div><span class="ms" aria-hidden="true">call</span><span class="st"><b>Free &amp; instant call-back</b><span class="sub">1300 135 897</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!--
+    The ten tiles. On the live site these link to /GoToSlide[1], [2] and [4],
+    which are not pages. Here each one goes to the section that describes it.
+  -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="head rv">
+        <p class="rule eyebrow">Quick links</p>
+        <h2>Plumbing, gas, drains, roofing</h2>
+      </div>
+      <nav class="tiles rv" aria-label="Jump to a service">
+        <a href="#gas-fitters-id"><span class="ms" aria-hidden="true">water_heater</span>Hot water</a>
+        <a href="#gas-fitters-id"><span class="ms" aria-hidden="true">oven_gen</span>Gas appliances</a>
+        <a href="#gas-fitters-id"><span class="ms" aria-hidden="true">local_fire_department</span>Gas fitting</a>
+        <a href="#services-id"><span class="ms" aria-hidden="true">water_drop</span>Leaking taps</a>
+        <a href="#blocked-drains-id"><span class="ms" aria-hidden="true">waves</span>Sewers</a>
+        <a href="#roof+gutters-id"><span class="ms" aria-hidden="true">roofing</span>Roofing</a>
+        <a href="#roof+gutters-id"><span class="ms" aria-hidden="true">water_damage</span>Gutters &amp; downpipes</a>
+        <a href="#blocked-drains-id"><span class="ms" aria-hidden="true">cleaning_services</span>Blocked drains</a>
+        <a href="#blocked-drains-id"><span class="ms" aria-hidden="true">wc</span>Toilets</a>
+        <a href="#services-id"><span class="ms" aria-hidden="true">plumbing</span>Burst pipes</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ABOUT. Copy verbatim from their About section. -->
+  <section class="sec" id="about-id" style="padding-top:0">
+    <div class="wrap about">
+      <div class="rv">
+        <p class="eyebrow" style="color:var(--cyan)">About us</p>
+        <h2 style="margin-top:.7rem">Plumbers in Ashburton &ndash; VIC</h2>
+        <p>The problem that often arises with some tradies is that they may lack the communication skills to help you fully understand the nature of the problem.</p>
+        <p>As a result, they cannot offer you the appropriate advice and service. However, this is a field where we excel. Not only will we treat your property with the utmost respect, like cleaning up after ourselves, but we&rsquo;ll listen to you and explain the problem to you in a friendly and easygoing manner. This will give you peace of mind as you&rsquo;ll know exactly where you stand.</p>
+        <p>With over 25 years of plumbing experience across Melbourne, we can honestly say that we are ready to tackle any issue that you may be facing with your domestic plumbing system.</p>
+        <p>Our plumbers are young and resourceful. They are courteous, efficient and informative. Not to mention that they are always willing to clear away all the mess after the work!</p>
+        <p>GARRY THE PLUMBER has an upstanding reputation and is renowned for its meticulous work. As a result, we have gained the trust and confidence of customers throughout the Melbourne South Eastern suburbs, including Ashburton, Hughesdale, Camberwell, Malvern and Glen Iris among other areas.</p>
+        <div class="chips">
+          <span class="chip"><span class="ms" aria-hidden="true">place</span>125 Kangaroo Rd, Oakleigh, 3166</span>
+          <span class="chip"><span class="ms" aria-hidden="true">workspace_premium</span>25 years experience</span>
+        </div>
+      </div>
+      <div class="about-aside rv">
+        <img class="van" src="img/van.webp" alt="A Garry The Plumber van in the business livery" width="1000" height="500" loading="lazy">
+        <div class="badge-row">
+          <img src="img/mba-logo.webp" alt="Master Plumbers and Mechanical Services Association of Australia badge" width="204" height="522" loading="lazy">
+          <span>We are a member of the Masters&nbsp;Plumbers Association.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 Reasons, their own wording from their own slide. -->
+  <section class="band">
+    <div class="sec">
+      <div class="wrap">
+        <div class="head rv">
+          <p class="rule eyebrow">Why us</p>
+          <h2>6 Reasons to use us</h2>
+          <p>Not only will we treat your property with the utmost respect, like cleaning up after ourselves, but we&rsquo;ll listen to you and explain the problem to you in a friendly and easygoing manner.</p>
+        </div>
+        <div class="reasons">
+          <div class="rv"><span class="ms" aria-hidden="true">task_alt</span><b>Effective solution</b></div>
+          <div class="rv"><span class="ms" aria-hidden="true">water_damage</span><b>Downpipes &amp; gutters</b></div>
+          <div class="rv"><span class="ms" aria-hidden="true">local_fire_department</span><b>Both water and gas</b></div>
+          <div class="rv"><span class="ms" aria-hidden="true">workspace_premium</span><b>25 years experience</b></div>
+          <div class="rv"><span class="ms" aria-hidden="true">payments</span><b>Affordable prices</b></div>
+          <div class="rv"><span class="ms" aria-hidden="true">forum</span><b>Good communication</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES. The nine bullets exactly as they are written on their page. -->
+  <section class="sec" id="services-id">
+    <div class="wrap">
+      <div class="head rv">
+        <p class="rule eyebrow">What we do</p>
+        <h2>Plumbing services</h2>
+        <p>No problem is too big for us! We can analyse and find a solution for the most complex plumbing problems and our services include:</p>
+      </div>
+      <ul class="svc">
+        <li class="rv"><span class="ms" aria-hidden="true">home_repair_service</span>General plumbing maintenance &ndash; kitchen, bathroom, etc.</li>
+        <li class="rv"><span class="ms" aria-hidden="true">cleaning_services</span>Unclogging of blockages including drains, sewers, toilets, showers, sinks, storm water, etc.</li>
+        <li class="rv"><span class="ms" aria-hidden="true">plumbing</span>Burst pipes both for water and gas systems</li>
+        <li class="rv"><span class="ms" aria-hidden="true">local_fire_department</span>Gas fitting and gas appliance repairs</li>
+        <li class="rv"><span class="ms" aria-hidden="true">mode_heat</span>Heating and servicing of gas heating systems</li>
+        <li class="rv"><span class="ms" aria-hidden="true">water_heater</span>Hot water servicing and installation, storage, solar and instantaneous units</li>
+        <li class="rv"><span class="ms" aria-hidden="true">water_drop</span>Leaks &ndash; all leaking taps, toilets, hot water services and pipes</li>
+        <li class="rv"><span class="ms" aria-hidden="true">roofing</span>Roofing &ndash; repairs of roof leaks, downpipes and gutters</li>
+        <li class="rv"><span class="ms" aria-hidden="true">search</span>Leak detection &ndash; burst water and gas pipes traced in concealed locations using acoustic equipment</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- GAS FITTERS AND HOT WATER -->
+  <section class="sec" id="gas-fitters-id" style="padding-top:0">
+    <div class="wrap det">
+      <figure class="det-fig rv">
+        <img src="img/svc-hot-water.webp" alt="Copper and brass inlet and outlet fittings on a storage hot water unit" width="860" height="645" loading="lazy">
+        <figcaption>Copper and brass fittings at the inlet and outlet of a storage hot water unit.</figcaption>
+      </figure>
+      <div class="rv">
+        <p class="eyebrow" style="color:var(--cyan)">Gas</p>
+        <h2 style="margin-top:.7rem">Gas fitters and hot water</h2>
+        <p>The installation of a gas or hot water system in a house or building requires skill, expertise and experience. GARRY THE PLUMBER is a qualified gas plumber and fitter that has more that 25 years experience in the field. All work done is of the highest quality and is done only by fully qualified and certified trades professionals.</p>
+        <p style="color:var(--ink); font-weight:600; margin-top:1.2rem">We expertly provide the following services:</p>
+        <ul>
+          <li><span class="ms" aria-hidden="true">check_circle</span>Gas leak detection, diagnosis and repair</li>
+          <li><span class="ms" aria-hidden="true">check_circle</span>Gas hot water service</li>
+          <li><span class="ms" aria-hidden="true">check_circle</span>New gas pipe installations</li>
+          <li><span class="ms" aria-hidden="true">check_circle</span>Gas oven and cook top installations and connections</li>
+          <li><span class="ms" aria-hidden="true">check_circle</span>Gas heater installation, service and repair</li>
+        </ul>
+        <p style="margin-top:1.3rem">We are fully licensed for both gas and electric hot water system installation, maintenance and repair. These include:</p>
+        <ul class="two-col">
+          <li><span class="ms" aria-hidden="true">check_circle</span>Hot Water Installation</li>
+          <li><span class="ms" aria-hidden="true">check_circle</span>Hot Water Systems</li>
+          <li><span class="ms" aria-hidden="true">check_circle</span>Gas Hot Water Repairs</li>
+          <li><span class="ms" aria-hidden="true">check_circle</span>Gas Appliance Repair</li>
+          <li><span class="ms" aria-hidden="true">check_circle</span>Gas LPG Installation</li>
+          <li><span class="ms" aria-hidden="true">check_circle</span>Gas Heater Repairs</li>
+          <li><span class="ms" aria-hidden="true">check_circle</span>Gas Stove Repairs</li>
+          <li><span class="ms" aria-hidden="true">check_circle</span>Gas Installation</li>
+          <li><span class="ms" aria-hidden="true">check_circle</span>Gas Relining</li>
+          <li><span class="ms" aria-hidden="true">check_circle</span>Gas Leaks Detection</li>
+          <li><span class="ms" aria-hidden="true">check_circle</span>Gas Fitting Services</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOCKED DRAINS -->
+  <section class="sec" id="blocked-drains-id" style="padding-top:0">
+    <div class="wrap det flip">
+      <figure class="det-fig rv">
+        <img src="img/svc-excavator.webp" alt="A mini excavator inside a garage, digging a trench through the concrete slab" width="900" height="675" loading="lazy">
+        <figcaption>A mini excavator working inside a garage, cutting a trench through the slab.</figcaption>
+      </figure>
+      <div class="rv">
+        <p class="eyebrow" style="color:var(--cyan)">Drains</p>
+        <h2 style="margin-top:.7rem">Blocked drain solutions</h2>
+        <p>One of the most common plumbing issues that many people face is the blockage of drains. Drains face a daily buildup of grease, hair, soap, detergents, along with other chemicals, making you likely to have an unexpected clog or backup that happens with most residential drains.</p>
+        <p>GARRY THE PLUMBER specialises in the unclogging of drains of all types.</p>
+        <p>Armed with extensive experience in plumbing and the commitment for top-notch service and quality workmanship, we can offer extensive drain cleaning and repair services on the following:</p>
+        <ul>
+          <li><span class="ms" aria-hidden="true">check_circle</span>Toilets</li>
+          <li><span class="ms" aria-hidden="true">check_circle</span>Showers</li>
+          <li><span class="ms" aria-hidden="true">check_circle</span>Kitchen sinks</li>
+          <li><span class="ms" aria-hidden="true">check_circle</span>Sewers and storm water drains</li>
+        </ul>
+        <p style="margin-top:1.2rem">We can pinpoint your clog and backup problems and easily solve your drain problem. Moreover, we work very tidily and we take every precaution to prevent undue damage to the existing plumbing systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROOF AND GUTTERING. The id keeps the plus sign the live site uses. -->
+  <section class="sec" id="roof+gutters-id" style="padding-top:0">
+    <div class="wrap det">
+      <figure class="det-fig rv">
+        <img src="img/svc-gutter.webp" alt="A plumber fixing a new box gutter and fascia along the edge of a tiled roof" width="860" height="645" loading="lazy">
+        <figcaption>New box gutter and fascia being fixed along the edge of a tiled roof.</figcaption>
+      </figure>
+      <div class="rv">
+        <p class="eyebrow" style="color:var(--cyan)">Roofing</p>
+        <h2 style="margin-top:.7rem">Roof and guttering</h2>
+        <p>The roof can expose your house to the elements. Therefore, it is important to trust only professionals for your roof and gutter plumbing works.</p>
+        <p>At GARRY THE PLUMBER, we have the required skills and experience to evaluate your roof needs. We can undertake the installation and replacement of old metal roofs on the house or garage.</p>
+        <p>We are fully competent to detect and sort out spouting, guttering and downpipe problems and we can carry out any necessary replacement. We also perform roof and leak inspection and we can replace deck and pergola roofs with polycarbonate roofs.</p>
+        <p>If you have a problem with your guttering and need it cleaned, repaired or replaced please contact us.</p>
+        <p style="margin-top:1.4rem"><a class="btn btn-line" href="#enquiry"><span class="ms" aria-hidden="true">edit_note</span>Send an enquiry</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- KITCHEN AND BATHROOM, their general maintenance line, with their photo. -->
+  <section class="sec" style="padding-top:0">
+    <div class="wrap det flip">
+      <figure class="det-fig rv">
+        <img src="img/svc-kitchen.webp" alt="A plumber working on the pipework inside a kitchen sink cabinet" width="900" height="675" loading="lazy">
+        <figcaption>Working on the pipework inside a kitchen sink cabinet.</figcaption>
+      </figure>
+      <div class="rv">
+        <p class="eyebrow" style="color:var(--cyan)">Maintenance</p>
+        <h2 style="margin-top:.7rem">No problem is too big for us!</h2>
+        <p>We provide professional plumbing services for your house or apartment including toilet plumbing, kitchen plumbing, blocked drains, leaking taps and much more.</p>
+        <p>We work very tidily and we take every precaution to prevent undue damage to the existing plumbing.</p>
+        <div class="chips">
+          <span class="chip"><span class="ms" aria-hidden="true">check_circle</span>Effective solution</span>
+          <span class="chip"><span class="ms" aria-hidden="true">check_circle</span>Affordable prices</span>
+          <span class="chip"><span class="ms" aria-hidden="true">check_circle</span>Good communication</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--
+    Our work. Seven of their own photographs. Every caption describes only
+    what is visible in the frame: no suburb, no date, no customer.
+  -->
+  <section class="sec" id="our-work" style="padding-top:0">
+    <div class="wrap">
+      <div class="head rv">
+        <p class="rule eyebrow">Our work</p>
+        <h2>Photographs from our own jobs</h2>
+      </div>
+      <div class="gal">
+        <figure class="rv">
+          <img src="img/work-water-main.webp" alt="A copper water pipe being press-fitted in a trench cut through a concrete path" width="760" height="950" loading="lazy">
+          <figcaption>Copper water pipe press-fitted in a trench cut through a concrete path</figcaption>
+        </figure>
+        <figure class="rv">
+          <img src="img/work-roof-harness.webp" alt="A roof plumber in a safety harness working beside a glass pyramid skylight" width="760" height="950" loading="lazy">
+          <figcaption>Working in a harness beside a glass pyramid skylight</figcaption>
+        </figure>
+        <figure class="rv">
+          <img src="img/work-battens-sarking.webp" alt="A tiled roof stripped back to the battens with blue sarking laid underneath" width="800" height="1000" loading="lazy">
+          <figcaption>Tiled roof stripped back to the battens, sarking laid underneath</figcaption>
+        </figure>
+        <figure class="rv">
+          <img src="img/work-scaffold.webp" alt="Scaffolding erected along the rear of a two storey weatherboard house beside a pool" width="800" height="1000" loading="lazy">
+          <figcaption>Scaffold up along the rear of a two storey house</figcaption>
+        </figure>
+        <figure class="rv">
+          <img src="img/work-sink-pipework.webp" alt="New white waste pipework and braided supply hoses under a double kitchen sink" width="800" height="1000" loading="lazy">
+          <figcaption>New waste pipework and supply hoses under a double sink</figcaption>
+        </figure>
+        <figure class="rv">
+          <img src="img/work-protective-suit.webp" alt="A tradesman in a full protective suit and respirator in an emptied room" width="800" height="1000" loading="lazy">
+          <figcaption>Full protective suit and respirator before starting in an emptied room</figcaption>
+        </figure>
+        <figure class="rv">
+          <img src="img/work-benchtop-cut.webp" alt="A tradesman in a respirator cutting a kitchen benchtop for a sink" width="800" height="1000" loading="lazy">
+          <figcaption>Cutting a kitchen benchtop for a sink</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!--
+    CONTACT. The live page says "by phone, email or filling in the enquiry
+    form" and has no form. The sentence stays; the form is now here, and the
+    ServiceM8 Request Booking button keeps its original URL beside it.
+  -->
+  <section class="contact" id="contact-id">
+    <div class="sec">
+      <div class="wrap">
+        <div class="head rv">
+          <p class="rule eyebrow">Contact</p>
+          <h2>Get in touch with GARRY THE PLUMBER</h2>
+          <p>If you&rsquo;ve got a plumbing project, big or small, we&rsquo;d love to hear from you. Contact us about what you want to achieve by phone, email or filling in the enquiry form.</p>
+        </div>
+        <div class="c-grid">
+          <div class="rv">
+            <a class="dial" href="tel:+611300135897"><span class="ms" aria-hidden="true">call</span>1300 135 897</a>
+            <p class="crow"><span class="ms" aria-hidden="true">call</span><span><strong>Or call</strong><a href="tel:+61399692555">(03) 9969 2555</a></span></p>
+            <p class="crow"><span class="ms" aria-hidden="true">mail</span><span><strong>Email us</strong><a href="mailto:info@garrytheplumber.net.au">info@garrytheplumber.net.au</a></span></p>
+            <p class="crow"><span class="ms" aria-hidden="true">place</span><span><strong>Where we are</strong>125 Kangaroo Rd, Oakleigh, 3166</span></p>
+            <p class="crow"><span class="ms" aria-hidden="true">map</span><span><strong>Suburbs we serve</strong>Ashburton, Hughesdale, Camberwell, Malvern, Glen Iris, Oakleigh</span></p>
+            <p class="crow"><span class="ms" aria-hidden="true">workspace_premium</span><span><strong>Association</strong>We are a member of the Masters Plumbers Association.</span></p>
+          </div>
+
+          <div class="rv">
+            <div class="form-card" id="enquiry">
+              <h3>Enquiry form</h3>
+              <p>Tell us what you need and we&rsquo;ll come back to you.</p>
+
+              <form id="enq" novalidate>
+                <div class="fg two">
+                  <div class="field" data-f="name">
+                    <label for="f-name">Your name <span class="req" aria-hidden="true">*</span></label>
+                    <input id="f-name" name="name" type="text" autocomplete="name" required>
+                    <span class="err">Please tell us your name.</span>
+                  </div>
+                  <div class="field" data-f="phone">
+                    <label for="f-phone">Phone <span class="req" aria-hidden="true">*</span></label>
+                    <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
+                    <span class="err">Please add a number we can call back on.</span>
+                  </div>
+                </div>
+                <div class="fg two">
+                  <div class="field" data-f="email">
+                    <label for="f-email">Email</label>
+                    <input id="f-email" name="email" type="email" autocomplete="email">
+                    <span class="err">That email address does not look right.</span>
+                  </div>
+                  <div class="field" data-f="suburb">
+                    <label for="f-suburb">Suburb</label>
+                    <input id="f-suburb" name="suburb" type="text" list="suburbs" autocomplete="address-level2">
+                    <datalist id="suburbs">
+                      <option value="Ashburton"></option>
+                      <option value="Hughesdale"></option>
+                      <option value="Camberwell"></option>
+                      <option value="Malvern"></option>
+                      <option value="Glen Iris"></option>
+                      <option value="Oakleigh"></option>
+                    </datalist>
+                    <span class="err"></span>
+                  </div>
+                </div>
+                <div class="fg">
+                  <div class="field" data-f="job">
+                    <label for="f-job">What do you need? <span class="req" aria-hidden="true">*</span></label>
+                    <select id="f-job" name="job" required>
+                      <option value="">Please choose</option>
+                      <option>General plumbing maintenance</option>
+                      <option>Blocked drain, sewer or toilet</option>
+                      <option>Burst pipe, water or gas</option>
+                      <option>Gas fitting or gas appliance repair</option>
+                      <option>Gas heating service or repair</option>
+                      <option>Hot water service or installation</option>
+                      <option>Leaking tap, toilet or pipe</option>
+                      <option>Roofing, downpipes or gutters</option>
+                      <option>Leak detection</option>
+                      <option>Something else</option>
+                    </select>
+                    <span class="err">Please choose what the job is.</span>
+                  </div>
+                  <div class="field" data-f="details">
+                    <label for="f-details">Tell us about the job <span class="req" aria-hidden="true">*</span></label>
+                    <textarea id="f-details" name="details" required></textarea>
+                    <span class="err">A sentence or two is plenty.</span>
+                  </div>
+                </div>
+                <div class="form-actions">
+                  <button class="btn btn-orange" type="submit"><span class="ms" aria-hidden="true">send</span>Send enquiry</button>
+                </div>
+                <p class="form-note">Prefer to talk? Call 1300 135 897 or (03) 9969 2555.</p>
+              </form>
+
+              <div class="sent" id="sent" role="status" aria-live="polite">
+                <h4><span class="ms" aria-hidden="true">check_circle</span>Your enquiry is ready to send</h4>
+                <p>Your email app should have opened with the message below already filled in. If it did not, copy the text and send it to info@garrytheplumber.net.au, or just give us a call.</p>
+                <pre id="sent-body"></pre>
+                <button class="btn btn-line" type="button" id="copy"><span class="ms" aria-hidden="true">content_copy</span>Copy the message</button>
+              </div>
+
+              <div class="or">or</div>
+              <div class="sm8">
+                <p>Book a time online through our ServiceM8 booking page.</p>
+                <a class="btn btn-line" href="https://book.servicem8.com/request_booking?uuid=98aed94e-df10-44fd-9d22-b52cdabca50b" target="_blank" rel="noopener"><span class="ms" aria-hidden="true">event_available</span>Request Booking</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-top">
+      <img src="img/gtp-logo.webp" alt="Garry The Plumber" width="600" height="192">
+      <nav class="ft-nav">
+        <a href="#about-id">About</a>
+        <a href="#services-id">Services</a>
+        <a href="#blocked-drains-id">Blocked drains</a>
+        <a href="#gas-fitters-id">Gas fitters</a>
+        <a href="#roof+gutters-id">Roof + gutters</a>
+        <a href="#contact-id">Contact</a>
+        <a href="https://www.facebook.com/Garry-the-Plumber-774904459207356/" target="_blank" rel="noopener">Facebook</a>
+      </nav>
+    </div>
+    <div class="ft-mid">
+      <span><strong>GARRY THE PLUMBER</strong> is located at 125 Kangaroo Rd, Oakleigh, 3166</span>
+      <span>Phone: <a href="tel:+611300135897">1300 135 897</a> &nbsp;&middot;&nbsp; <a href="tel:+61399692555">(03) 9969 2555</a></span>
+      <span>Email: <a href="mailto:info@garrytheplumber.net.au">info@garrytheplumber.net.au</a></span>
+      <span>Member of the Masters Plumbers Association</span>
+    </div>
+    <div class="ft-btm">
+      <span>&copy; <span id="yr">2026</span> GARRY THE PLUMBER. 125 Kangaroo Rd, Oakleigh VIC 3166.</span>
+      <span>Ashburton &middot; Hughesdale &middot; Camberwell &middot; Malvern &middot; Glen Iris &middot; Oakleigh</span>
+    </div>
+    <p class="ft-note">Non-binding redesign draft for Garry The Plumber. Every sentence, service and suburb on this page is copied from garrytheplumber.net.au. All photographs are the business&rsquo;s own.</p>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a class="btn btn-orange" href="tel:+611300135897"><span class="ms" aria-hidden="true">call</span>Call 1300 135 897</a>
+</div>
+
+<script>
+/* Icons stay hidden until the ligature font is really loaded, otherwise the
+   words "call" and "mail" ship as text. display:none, not visibility. */
+(function(){
+  if (!document.fonts || !document.fonts.load) return;
+  document.fonts.load('24px "Material Symbols Outlined"','call').then(function(){
+    var ok=false;
+    document.fonts.forEach(function(f){ if (f.family.indexOf('Material Symbols')>-1 && f.status==='loaded') ok=true; });
+    if (ok) document.documentElement.classList.add('icons-ready');
+  }).catch(function(){});
+})();
+
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* ---- the enquiry form -------------------------------------------------
+   Validates, then composes the message and hands it to the visitor's mail
+   client, and shows the same text on the page so it can be copied. On their
+   own hosting this would post to the server instead. -------------------- */
+(function(){
+  var form = document.getElementById('enq');
+  var panel = document.getElementById('sent');
+  var out = document.getElementById('sent-body');
+  var copy = document.getElementById('copy');
+  if (!form) return;
+
+  function box(name){ return form.querySelector('[data-f="'+name+'"]'); }
+  function val(id){ var el=document.getElementById(id); return el ? el.value.trim() : ''; }
+  function mark(name, bad){
+    var b = box(name); if (!b) return;
+    b.classList.toggle('bad', !!bad);
+    var input = b.querySelector('input,select,textarea');
+    if (input) input.setAttribute('aria-invalid', bad ? 'true' : 'false');
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    var name = val('f-name'), phone = val('f-phone'), email = val('f-email'),
+        suburb = val('f-suburb'), job = val('f-job'), details = val('f-details');
+
+    var bad = [];
+    if (!name) bad.push('name');
+    if (!phone) bad.push('phone');
+    if (!job) bad.push('job');
+    if (!details) bad.push('details');
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) bad.push('email');
+
+    ['name','phone','job','details','email'].forEach(function(f){ mark(f, bad.indexOf(f) > -1); });
+
+    if (bad.length){
+      var first = box(bad[0]);
+      if (first){
+        var input = first.querySelector('input,select,textarea');
+        if (input) input.focus();
+        first.scrollIntoView({block:'center', behavior:'smooth'});
+      }
+      return;
+    }
+
+    var lines = [
+      'Name: ' + name,
+      'Phone: ' + phone,
+      email  ? 'Email: ' + email   : null,
+      suburb ? 'Suburb: ' + suburb : null,
+      'Job: ' + job,
+      '',
+      details
+    ].filter(Boolean);
+    var body = lines.join('\n');
+
+    out.textContent = body;
+    panel.classList.add('on');
+
+    var subject = 'Website enquiry - ' + job + (suburb ? ' - ' + suburb : '');
+    window.location.href = 'mailto:info@garrytheplumber.net.au'
+      + '?subject=' + encodeURIComponent(subject)
+      + '&body='    + encodeURIComponent(body);
+
+    panel.scrollIntoView({block:'center', behavior:'smooth'});
+  });
+
+  form.addEventListener('input', function(e){
+    var b = e.target.closest('.field');
+    if (b && b.classList.contains('bad')) b.classList.remove('bad');
+  });
+
+  copy.addEventListener('click', function(){
+    var text = out.textContent;
+    var done = function(){
+      copy.innerHTML = '<span class="ms" aria-hidden="true">check</span>Copied';
+      setTimeout(function(){ copy.innerHTML = '<span class="ms" aria-hidden="true">content_copy</span>Copy the message'; }, 2200);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(function(){});
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = text; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); done(); } catch(err){}
+      document.body.removeChild(ta);
+    }
+  });
+})();
+
+/* reveal on scroll */
+(function(){
+  var items = document.querySelectorAll('.rv');
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    items.forEach(function(el){ el.classList.add('in'); }); return;
+  }
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.08, rootMargin:'0px 0px -6% 0px'});
+  items.forEach(function(el){ io.observe(el); });
+})();
+</script>
+<!-- Visit counter: GoatCounter, no cookies, no stored IP address. Counted under the page path /garry/. -->
+<script data-goatcounter="https://satort25.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
