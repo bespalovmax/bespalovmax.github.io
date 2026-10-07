@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quinn Crash Repairs Ltd. | Bellinter, Navan, Co. Meath</title>
+<meta name="description" content="Quinn Crash Repairs Ltd., the leading independent accident repair centre in Co. Meath. Bellinter, Navan. Tel (046) 9021866.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Quinn Crash Repairs Ltd. · Draft">
+<meta property="og:description" content="Non-binding redesign draft for the Quinn Crash Repairs Ltd. website.">
+<meta property="og:url" content="https://bespalovmax.github.io/quinn/">
+<meta property="og:image" content="https://bespalovmax.github.io/quinn/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!--
+  =====================================================================
+  DRAFT / NOT COMMISSIONED
+  Redesign draft for Quinn Crash Repairs Ltd. (quinncrashrepairs.ie),
+  Bellinter, Navan, Co. Meath. Not commissioned, not live, set to
+  noindex/nofollow. Made 2026-10-07 by Maksym Bespalov.
+  =====================================================================
+
+  KEPT FROM THE ORIGINAL (source: the six pages of quinncrashrepairs.ie)
+  - All copy is the site's own wording: the welcome text, both service
+    lists in the site's order, About, Crash Repairs, Spray Painting,
+    "Your car, your choice", the contact block, opening hours and the
+    directions line. Spelling corrected only: "envirnmentally",
+    "undectable", "Allignment" (twice).
+  - Brand blue #1A3783 and red #DB261F, eyedropped from the logo in the
+    site header (the blue is also the site's own heading colour). Red
+    text on the light background uses a deeper #B81D17 of the same hue
+    for contrast; the bright red stays on buttons with white text
+    (4.9:1) and as decoration.
+  - The logo is cut from the site's own header image.
+  - Menu order and names: Home, About Us, Crash Repairs, Spray Painting,
+    Insurance Work, Contact Us. The six pages become anchors on one page.
+
+  CHANGED
+  - Built for phones first. The original has no viewport tag and a fixed
+    1298px layout, so a phone shows it shrunk to a third.
+  - Typography, grid, spacing. One radius system: 2px.
+  - "We accept:" now lists MasterCard and Visa as text. The Laser logo is
+    gone: Laser stopped working on 28 February 2014.
+  - New: "Free estimates & advice" (#estimate). The site lists free
+    estimates twice but offers no way to ask for one except an email
+    link. The form here writes the request into the visitor's own email
+    app, addressed to info@quinncrashrepairs.ie. Nothing is sent from
+    this page.
+
+  IMAGES
+  The front-of-premises photo is the site's own. Nine photos come from
+  the business's own Facebook page: two repairs shown stage by stage
+  and a car masked in the spray booth. One partly visible number plate
+  on a background car (silver-2) is blurred. No captions; models only
+  in alt text, and only where certain.
+  Not used: the Nexa Autocolor, SIMI and Certification Europe logos and
+  the card-scheme logos (third-party marks). SIMI membership stays as
+  the site's own sentence.
+
+  LEFT OUT
+  - Reviews: the site shows none. Google reviews are not the site's
+    content and are not shown.
+  - Names of staff: the contact page says "Contact Ray or Jim"; a draft
+    does not put names on the page.
+  - Copyright year.
+  =====================================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f4f5f7;
+  --bg-2:#e8eaef;
+  --card:#fbfbfc;
+  --ink:#10172a;
+  --ink-2:#2c3445;
+  --muted:#5b6475;
+  --line:#d4d8e0;
+  --blue:#1A3783;       /* logo blue, also the site's heading colour */
+  --blue-deep:#142b66;
+  --red:#DB261F;        /* logo red, buttons with white text and decoration */
+  --red-text:#B81D17;   /* same hue, AA as text on --bg */
+  --r:2px;
+  --gut:clamp(16px, 4vw, 44px);
+  --wrap:min(1200px, 100% - 2*var(--gut));
+  --serif:"Instrument Serif", Georgia, "Times New Roman", serif;
+  --sans:"Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --fs-hero:clamp(2.1rem, 1.5rem + 2.2vw, 3.35rem);
+  --fs-h2:clamp(2rem, 1.45rem + 2.6vw, 3.6rem);
+  --fs-body:clamp(1rem, .97rem + .15vw, 1.08rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+:where(body *){min-width:0}
+:where(p,h1,h2,h3,h4,h5,h6,li,dt,dd,a,span,strong,em,b,small,blockquote,figcaption,label,td,th,summary,button){overflow-wrap:break-word}
+:where(img,svg,video,canvas,iframe){max-width:100%}
+.btn,button{max-width:100%;white-space:normal}
+@media (max-width:299px){
+  :where(body *){overflow-wrap:anywhere}
+  .btn{padding-inline:1rem}
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 var(--fs-body)/1.6 var(--sans)}
+img{display:block;height:auto}
+a{color:inherit}
+.wrap{width:var(--wrap);margin-inline:auto}
+.ico{width:1.1em;height:1.1em;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.mono{font-family:var(--mono)}
+
+/* ---------- header ---------- */
+.top{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem clamp(.6rem,2vw,1.5rem);padding-block:.6rem}
+.top .logo{flex:none;margin-right:auto}
+.top .logo img{width:clamp(130px, 36vw, 220px)}
+.nav{display:none;gap:1.4rem;font-size:.92rem}
+.nav a{color:var(--ink-2);text-decoration:none}
+.nav a:hover{color:var(--red-text)}
+.top-call{display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;color:#fff;background:var(--red);border-radius:var(--r);padding:.55rem clamp(.55rem,2vw,.8rem);font:500 clamp(.8rem,.7rem + .5vw,.95rem)/1.15 var(--mono)}
+.top-call:hover{background:var(--red-text)}
+@media (min-width:1040px){.nav{display:flex}}
+
+/* ---------- hero ---------- */
+.hero{padding-block:clamp(1rem,4vw,4rem) clamp(2.5rem,6vw,5rem)}
+.hero-grid{display:grid;gap:clamp(1.25rem,4vw,4rem)}
+.meta{display:flex;flex-wrap:wrap;gap:.35rem 1.1rem;font:500 .8rem/1.3 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 1.1rem}
+h1{font:400 var(--fs-hero)/1.08 var(--serif);letter-spacing:-.01em;margin:0;max-width:21ch;color:var(--ink);padding-bottom:.05em}
+h1 em{font-style:italic;color:var(--blue)}
+.hero-sub{margin:1.1rem 0 0;max-width:40ch;color:var(--ink-2);font-size:clamp(1.05rem,1rem + .3vw,1.2rem)}
+.hero-photo{margin:0;border-radius:var(--r);overflow:hidden;background:var(--bg-2)}
+.hero-photo img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:60% 55%}
+
+.dir{border-top:2px solid var(--ink);display:flex;flex-direction:column}
+.dir-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.2rem 1rem;padding:.95rem 0;border-bottom:1px solid var(--line);text-decoration:none}
+.dir-row .who{font-size:.92rem;color:var(--muted);flex:1 1 7em}
+.dir-row .num{font:500 clamp(1.05rem,1rem + .35vw,1.25rem)/1.2 var(--mono);display:inline-flex;align-items:center;gap:.55rem}
+.nw{white-space:nowrap}
+.dir-row .num .ico{color:var(--red-text)}
+a.dir-row:hover .num{color:var(--red-text)}
+.dir-main{background:var(--blue);color:#fff;border:0;padding:1.05rem 1rem;margin-bottom:.15rem;border-radius:var(--r)}
+.dir-main .who{color:#c3cbe0}
+.dir-main .num{font-size:clamp(1.3rem,1.15rem + .8vw,1.7rem)}
+.dir-main .num .ico{color:#fff}
+a.dir-main:hover{background:var(--blue-deep)}
+a.dir-main:hover .num{color:#fff}
+.dir-act{display:flex;flex-wrap:wrap;gap:.6rem;padding-top:1rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;text-decoration:none;border-radius:var(--r);padding:.75rem 1.05rem;font:500 .95rem/1.1 var(--sans);transition:background .15s ease, transform .15s ease;border:0;cursor:pointer}
+.btn:active{transform:translateY(1px)}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-text)}
+.btn-line{border:1px solid var(--ink);color:var(--ink);background:transparent}
+.btn-line:hover{background:var(--ink);color:#fff}
+@media (min-width:960px){
+  .hero-grid{grid-template-columns:1.2fr 1fr;align-items:start}
+  .hero-photo{grid-column:2;grid-row:1 / span 2;align-self:stretch}
+  .hero-photo img{height:100%;aspect-ratio:auto;min-height:420px}
+  .hero-text{grid-column:1;grid-row:1}
+  h1{max-width:none}
+  .dir{grid-column:1;grid-row:2}
+}
+
+/* billing band */
+.band{background:var(--blue);color:#fff}
+.band .wrap{display:flex;flex-wrap:wrap;gap:.5rem 2rem;align-items:baseline;justify-content:space-between;padding-block:1.4rem}
+.band strong{font:400 clamp(1.5rem,1.2rem + 1.4vw,2.4rem)/1.1 var(--serif);letter-spacing:-.005em}
+.band span{font:500 .82rem/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:#c3cbe0}
+
+/* ---------- sections ---------- */
+section{padding-block:clamp(3.25rem,8vw,6.5rem)}
+h2{font:400 var(--fs-h2)/1.02 var(--serif);letter-spacing:-.01em;margin:0 0 1.5rem;color:var(--ink)}
+h2 em{font-style:italic;color:var(--blue)}
+.lede{font:400 clamp(1.3rem,1.1rem + .9vw,1.8rem)/1.3 var(--serif);margin:0 0 1rem}
+
+/* about */
+.about-grid{display:grid;gap:clamp(2rem,5vw,5rem)}
+.about p{max-width:56ch}
+.member{margin-top:1.75rem;padding:1rem 1.1rem;border-left:3px solid var(--blue);background:var(--card);font-weight:500}
+.offer{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,13em),1fr));gap:.6rem}
+.offer li{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:1rem 1rem 1.1rem;font:400 clamp(1.25rem,1.1rem + .5vw,1.5rem)/1.15 var(--serif)}
+.offer li::before{content:"";display:block;width:1.4rem;height:2px;background:var(--red);margin-bottom:.8rem}
+.offer-h{font:500 .95rem/1.3 var(--sans);color:var(--muted);margin:0 0 .9rem}
+@media (min-width:960px){.about-grid{grid-template-columns:1fr 1fr;align-items:start}}
+
+/* crash repairs */
+.crash{background:var(--card);border-block:1px solid var(--line)}
+.crash-grid{display:grid;gap:clamp(2rem,5vw,4rem)}
+.crash-intro p{max-width:50ch;color:var(--ink-2)}
+.svc{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;margin:1.5rem 0 0;padding:0}
+.svc li{border:1px solid var(--line);background:var(--bg);border-radius:var(--r);padding:.5rem .8rem;font-size:.95rem;line-height:1.3}
+@media (min-width:1000px){.crash-grid{grid-template-columns:.85fr 1.15fr;align-items:start}}
+.steps{display:grid;gap:.5rem}
+.steps-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}
+.steps-row figure{margin:0;border-radius:var(--r);overflow:hidden;background:var(--bg-2)}
+.steps-row img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.steps-row.three figure:last-child{grid-column:1 / -1}
+.steps-row.three figure:last-child img{aspect-ratio:16/9}
+@media (min-width:720px){
+  .steps-row{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .steps-row.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .steps-row.three figure:last-child{grid-column:auto}
+  .steps-row.three figure:last-child img{aspect-ratio:4/3}
+}
+.steps-note{font-size:.9rem;color:var(--muted);margin:.25rem 0 0}
+
+/* spray painting */
+.spray-grid{display:grid;gap:clamp(2rem,5vw,4.5rem)}
+.spray-photo{margin:0;border-radius:var(--r);overflow:hidden;background:var(--bg-2)}
+.spray-photo img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.spray p{max-width:52ch}
+.spray .big{font:400 clamp(1.3rem,1.1rem + .9vw,1.8rem)/1.3 var(--serif);color:var(--ink)}
+@media (min-width:960px){.spray-grid{grid-template-columns:1fr 1fr;align-items:center}.spray-photo{order:2}}
+
+/* insurance */
+.ins{background:var(--blue);color:#fff}
+.ins h2{color:#fff}
+.ins-grid{display:grid;gap:clamp(2rem,5vw,4.5rem)}
+.ins p{max-width:58ch;color:#dfe4f1}
+.ins .rights{font:400 clamp(1.5rem,1.2rem + 1.4vw,2.4rem)/1.15 var(--serif);color:#fff;margin:0 0 1.25rem;max-width:22ch}
+.ins h3{font:500 .82rem/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#c3cbe0;margin:0 0 1rem}
+.ins .final{margin-top:1.5rem;padding:1rem 1.1rem;background:var(--blue-deep);border-left:3px solid var(--red);color:#fff;font-weight:500}
+@media (min-width:960px){.ins-grid{grid-template-columns:1fr 1fr;align-items:start}}
+
+/* estimate */
+.est-grid{display:grid;gap:clamp(2rem,5vw,4rem)}
+.est-intro p{max-width:44ch;color:var(--ink-2)}
+.form{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:clamp(1.1rem,3vw,2rem);display:grid;gap:1.1rem}
+.f2{display:grid;gap:1.1rem}
+@media (min-width:600px){.f2{grid-template-columns:1fr 1fr}}
+.fld{display:grid;gap:.4rem}
+.fld label{font-weight:500;font-size:.95rem}
+.fld .hint{font-size:.85rem;color:var(--muted)}
+.fld input,.fld textarea{font:inherit;color:var(--ink);background:#fff;border:1px solid #8e96a6;border-radius:var(--r);padding:.7rem .8rem;width:100%}
+.fld textarea{min-height:8rem;resize:vertical}
+.fld input:focus,.fld textarea:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:var(--blue)}
+.fld .err{display:none;font-size:.88rem;color:var(--red-text);font-weight:500}
+.fld.bad .err{display:block}
+.fld.bad input,.fld.bad textarea{border-color:var(--red-text)}
+.form-foot{display:flex;flex-wrap:wrap;gap:.75rem 1.25rem;align-items:center}
+.form-foot p{margin:0;font-size:.88rem;color:var(--muted);flex:1 1 16em}
+.form-foot a{color:var(--blue)}
+@media (min-width:1000px){.est-grid{grid-template-columns:.8fr 1.2fr;align-items:start}}
+
+/* contact */
+.contact{background:var(--ink);color:#fff}
+.contact h2{color:#fff}
+.c-grid{display:grid;gap:clamp(2rem,5vw,4rem)}
+.c-addr{font:400 clamp(1.6rem,1.3rem + 1.3vw,2.4rem)/1.15 var(--serif);margin:0 0 1rem}
+.c-way{color:#c9cfdb;max-width:40ch;margin:0 0 1.5rem}
+.c-photo{margin:1.75rem 0 0;border-radius:var(--r);overflow:hidden;max-width:529px}
+.c-photo img{width:100%}
+.c-table{width:100%;border-collapse:collapse;font-size:1rem}
+.c-table,.c-table tbody{display:block}
+.c-table tr{display:flex;flex-wrap:wrap;gap:0 1rem;border-bottom:1px solid #2a3348}
+.c-table th{font:500 .78rem/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#9aa3b5;text-align:left;padding:1rem 0 .25rem;flex:1 1 9em}
+.c-table td{padding:.25rem 0 1rem;flex:2 1 16.5em}
+@media (min-width:480px){.c-table th,.c-table td{padding-block:1rem}}
+.c-table a{text-decoration:none;font-family:var(--mono);overflow-wrap:anywhere}
+.c-table a:hover{color:#ff8a84}
+.c-table .mono{font-family:var(--mono)}
+.btn-ghost{border:1px solid #46506a;color:#fff}
+.btn-ghost:hover{background:#1c2438}
+.c-actions{display:flex;flex-wrap:wrap;gap:.6rem}
+@media (min-width:960px){.c-grid{grid-template-columns:1fr 1fr}}
+
+footer{background:#fff;color:var(--muted);padding:1.75rem 0;font-size:.9rem;border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:center;justify-content:space-between}
+footer img{width:150px}
+footer p{margin:0}
+
+.rv{opacity:0;transform:translateY(12px);transition:opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+@media (max-width:299px){
+  .nw{white-space:normal;overflow-wrap:anywhere}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><path d="M3 11l19-9-9 19-2-8-8-2z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#home" aria-label="Quinn Crash Repairs Ltd., home"><img src="logo.webp" alt="Quinn Crash Repairs Ltd. Accident Repair Centre" width="464" height="122"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#crash-repairs">Crash Repairs</a>
+      <a href="#spray-painting">Spray Painting</a>
+      <a href="#insurance">Insurance Work</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+    <a class="top-call" href="tel:+353469021866"><svg class="ico"><use href="#i-phone"/></svg><span class="nw">(046)</span> <span class="nw">9021866</span></a>
+  </div>
+</header>
+
+<main>
+<div class="hero" id="home">
+  <div class="wrap hero-grid">
+    <figure class="hero-photo">
+      <img src="img/hero.webp" alt="Black Mercedes-Benz SUV after repair, side view on a paved drive" width="1400" height="1048" fetchpriority="high">
+    </figure>
+    <div class="hero-text">
+      <p class="meta">Bellinter, Navan, Co. Meath.</p>
+      <h1>The leading independent <em>accident repair centre</em> in Co. Meath.</h1>
+      <p class="hero-sub">We offer fast and efficient repairs at very affordable prices.</p>
+    </div>
+    <div class="dir" aria-label="Phone numbers">
+      <a class="dir-row dir-main" href="tel:+353469021866"><span class="who">Tel</span><span class="num"><svg class="ico"><use href="#i-phone"/></svg><span><span class="nw">(046)</span> <span class="nw">9021866</span></span></span></a>
+      <a class="dir-row" href="tel:+353868206216"><span class="who">Mob</span><span class="num"><svg class="ico"><use href="#i-phone"/></svg><span><span class="nw">(086)</span> <span class="nw">8206216</span></span></span></a>
+      <div class="dir-act">
+        <a class="btn btn-red" href="#estimate">Free estimate</a>
+        <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=Quinn+Crash+Repairs+Ltd+Bellinter+Navan+Co+Meath" target="_blank" rel="noopener"><svg class="ico"><use href="#i-route"/></svg>Directions</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="band">
+  <div class="wrap">
+    <strong>Direct billing to all insurance companies</strong>
+    <span>Insurance Claims Handled</span>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="rv">
+      <h2>About Quinn Crash <em>Repairs</em> Ltd.</h2>
+      <p class="lede">One of the leading independent accident repair centres in the Northeast, Quinn Crash Repairs is a family-run business operating from our purpose-built bodyshop since the early 1970's.</p>
+      <p>Our highly qualified and experienced technicians can repair all makes and models of cars and light commercials to a very high standard with a quick turnaround time at very competitive rates.</p>
+      <p>We serve a wide range of customers, from private customers to motor trade, insurance companies, local businesses, government agencies, etc.</p>
+      <p>We are a licenced Vehicle Refinishing Operator using environmentally friendly paint and we are fully compliant with strict Environmental Protection Agency regulations.</p>
+      <p>Quinn Crash Repairs has a dedicated and highly experienced team of personnel using advanced repair methods with the latest technology equipment. This enables repairs to be expertly carried out to the exacting standards required for today’s modern motor vehicles.</p>
+      <p class="member">Member of the Society of the Irish Motor Industry</p>
+    </div>
+    <div class="rv">
+      <p class="offer-h">Our Services include:</p>
+      <!-- Eight items, wording and order as on the home page. -->
+      <ul class="offer">
+        <li>Crash Repairs</li>
+        <li>Spray Painting</li>
+        <li>Chassis Alignment</li>
+        <li>Free estimates &amp; advice</li>
+        <li>Low Bake Oven</li>
+        <li>Headlight Alignment</li>
+        <li>Insurance Claims Handled</li>
+        <li>All work fully guaranteed</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="crash" id="crash-repairs">
+  <div class="wrap crash-grid">
+    <div class="crash-intro rv">
+      <h2>Crash Repairs</h2>
+      <p>Our state of the art vehicle body repair equipment enables us to carry out quality repairs on all modern makes and models of cars, 4X4's and light commercials.</p>
+      <p>We can repair all types of damage from major or minor collision damage to bumper scuffs and full resprays.</p>
+      <p style="margin-bottom:0;color:var(--muted)">Our services include:</p>
+      <!-- Ten items, wording and order as on the Crash Repairs page. -->
+      <ul class="svc">
+        <li>Panel Beating</li>
+        <li>Crash Repairs</li>
+        <li>Spray Painting</li>
+        <li>Panel Replacement</li>
+        <li>Alloy Wheel Refurbishment</li>
+        <li>Headlight Alignment</li>
+        <li>Wheel Alignment</li>
+        <li>Colour Restoration</li>
+        <li>Repair of Cracked Bumpers</li>
+        <li>Free Estimates &amp; Advice.</li>
+      </ul>
+    </div>
+    <!-- Two repairs from the business's Facebook page, in the order the photos show. -->
+    <div class="steps rv">
+      <div class="steps-row">
+        <figure><img src="img/merc-1.webp" alt="Black Mercedes-Benz SUV in the workshop with a dented and scraped rear door" width="800" height="599" loading="lazy"></figure>
+        <figure><img src="img/merc-2.webp" alt="The same door and rear wing sanded back to bare metal" width="800" height="599" loading="lazy"></figure>
+        <figure><img src="img/merc-3.webp" alt="The panels filled and smoothed, ready for primer" width="800" height="599" loading="lazy"></figure>
+        <figure><img src="img/merc-4.webp" alt="The Mercedes-Benz SUV refinished in black in the workshop" width="800" height="599" loading="lazy"></figure>
+      </div>
+      <div class="steps-row three">
+        <figure><img src="img/silver-1.webp" alt="Silver hatchback with a dented rear door" width="800" height="600" loading="lazy"></figure>
+        <figure><img src="img/silver-2.webp" alt="The rear door filled and sanded" width="800" height="600" loading="lazy"></figure>
+        <figure><img src="img/silver-3.webp" alt="The silver hatchback after repair, outside the workshop" width="800" height="600" loading="lazy"></figure>
+      </div>
+      <p class="steps-note">From our Facebook page</p>
+    </div>
+  </div>
+</section>
+
+<section class="spray" id="spray-painting">
+  <div class="wrap spray-grid">
+    <figure class="spray-photo rv"><img src="img/spray-booth.webp" alt="Car masked in plastic sheeting in the spray booth, one door prepared for paint" width="900" height="674" loading="lazy"></figure>
+    <div class="rv">
+      <h2>Spray <em>Painting</em></h2>
+      <p class="big">All our repairs are refinished to a very high standard in our low-bake oven using environmentally friendly water-based paint from Nexa Autocolor.</p>
+      <p>We are licenced with Meath County Council as a fully compliant Vehicle Refinishing Operator.</p>
+      <p>With our computerised paint matching system we can restore the showroom shine and lustre to your post-accident vehicle with a perfect, undetectable match every time.</p>
+    </div>
+  </div>
+</section>
+
+<section class="ins" id="insurance">
+  <div class="wrap ins-grid">
+    <div class="rv">
+      <h2>“Your car, your choice”</h2>
+      <p>Being involved in an accident is a scary and upsetting event for anyone, so it's easy to just follow standard processes in order to get your car repaired and back on the road as soon as possible with the minimum amount of hassle.</p>
+      <p>However, most people assume that your only option is to take your vehicle to the accident repair centre recommended by the Insurance Company.</p>
+      <p class="rights">You have the right to choose where your vehicle is repaired after an accident.</p>
+    </div>
+    <div class="rv">
+      <h3>Know your rights</h3>
+      <p>You are free to have your car repaired at the garage of your choice, no matter what your Insurance Company may advise. It's your car. It's your choice.</p>
+      <p>Do not be unduly influenced by your Insurers suggestions of undue delays and extra costs. Such suggestions are not necessarily accurate. You are entitled to consider the benefits of dealing with the garage of your choice including the eventual trade-in value of your vehicle.</p>
+      <p class="final">Remember, you are NOT obliged to have your vehicle repaired at an Insurance nominated garage.</p>
+    </div>
+  </div>
+</section>
+
+<section class="estimate" id="estimate">
+  <div class="wrap est-grid">
+    <div class="est-intro rv">
+      <h2>Free estimates <em>&amp; advice</em></h2>
+      <p>Tell us about the damage. The request opens in your own email app, addressed to <a href="mailto:info@quinncrashrepairs.ie" style="color:var(--blue)">info@quinncrashrepairs.ie</a>, and you can attach photos there before you send it.</p>
+      <p>Or call <a href="tel:+353469021866" style="color:var(--blue);white-space:nowrap">(046) 9021866</a>.</p>
+    </div>
+    <form class="form rv" id="est" novalidate>
+      <div class="f2">
+        <div class="fld" id="f-name">
+          <label for="name">Name</label>
+          <input id="name" name="name" autocomplete="name" required>
+          <span class="err">Please enter your name.</span>
+        </div>
+        <div class="fld" id="f-phone">
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+          <span class="err">Please enter a phone number.</span>
+        </div>
+      </div>
+      <div class="fld">
+        <label for="car">Car</label>
+        <input id="car" name="car" autocomplete="off">
+        <span class="hint">Make, model and year, if you have them.</span>
+      </div>
+      <div class="fld" id="f-msg">
+        <label for="msg">What happened</label>
+        <textarea id="msg" name="msg" required></textarea>
+        <span class="err">Please describe the damage.</span>
+      </div>
+      <div class="form-foot">
+        <button class="btn btn-red" type="submit"><svg class="ico"><use href="#i-mail"/></svg>Open in email app</button>
+        <p>Nothing is sent from this page. Your email app opens with the message ready.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap c-grid">
+    <div class="rv">
+      <h2>Contact Us</h2>
+      <p class="c-addr">Quinn Crash Repairs Ltd.<br>Bellinter, Navan,<br>Co. Meath.</p>
+      <p class="c-way">We are located just 4km from Exit 7 on the M3 Motorway. Just 20 minutes from the M50.</p>
+      <div class="c-actions">
+        <a class="btn btn-red" href="tel:+353469021866"><svg class="ico"><use href="#i-phone"/></svg>Call (046) 9021866</a>
+        <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Quinn+Crash+Repairs+Ltd+Bellinter+Navan+Co+Meath" target="_blank" rel="noopener"><svg class="ico"><use href="#i-route"/></svg>Directions</a>
+      </div>
+      <figure class="c-photo"><img src="img/premises.webp" alt="Front of Quinn Crash Repairs with the company sign and van" width="529" height="295" loading="lazy"></figure>
+    </div>
+    <div class="rv">
+      <table class="c-table">
+        <tr><th scope="row">Tel</th><td><a href="tel:+353469021866">(046) 9021866</a></td></tr>
+        <tr><th scope="row">Mob</th><td><a href="tel:+353868206216">(086) 8206216</a></td></tr>
+        <tr><th scope="row">Fax</th><td class="mono">(046) 9073394</td></tr>
+        <tr><th scope="row">Email</th><td><a href="mailto:info@quinncrashrepairs.ie">info@quinncrashrepairs.ie</a></td></tr>
+        <tr><th scope="row">Opening hours</th><td>9am - 6pm Monday to Thursday<br>9am - 5pm Friday</td></tr>
+        <tr><th scope="row">We accept</th><td>MasterCard, Visa</td></tr>
+        <tr><th scope="row">Facebook</th><td><a href="https://www.facebook.com/quinncrashrepairs" target="_blank" rel="noopener">Facebook page</a></td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="logo.webp" alt="Quinn Crash Repairs Ltd." width="464" height="122" loading="lazy">
+    <p>Quinn Crash Repairs Ltd., Bellinter, Navan, Co. Meath.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var items = document.querySelectorAll('.rv');
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    items.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:.08, rootMargin:'0px 0px -6% 0px'});
+    items.forEach(function(el){ io.observe(el); });
+  }
+
+  // The estimate form writes an email in the visitor's own mail app. Nothing is sent from the page.
+  var f = document.getElementById('est');
+  f.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var ok = true;
+    [['f-name','name'],['f-phone','phone'],['f-msg','msg']].forEach(function(p){
+      var bad = !document.getElementById(p[1]).value.trim();
+      document.getElementById(p[0]).classList.toggle('bad', bad);
+      if (bad && ok){ document.getElementById(p[1]).focus(); ok = false; }
+    });
+    if (!ok) return;
+    var v = function(id){ return document.getElementById(id).value.trim(); };
+    var body = 'Name: ' + v('name') + '\nPhone: ' + v('phone') + (v('car') ? '\nCar: ' + v('car') : '') + '\n\n' + v('msg') + '\n';
+    location.href = 'mailto:info@quinncrashrepairs.ie?subject=' + encodeURIComponent('Estimate request') + '&body=' + encodeURIComponent(body);
+  });
+})();
+</script>
+<!-- Visit counter: GoatCounter, no cookies, no stored IP address. Counted under the page path /quinn/. -->
+<script data-goatcounter="https://satort25.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
