@@ -75,20 +75,20 @@ a { color: inherit; text-decoration: none; }
   height: 96px; position: relative; z-index: 2;
 }
 .brand { display: inline-flex; align-items: center; }
-.logo { width: 132px; height: auto; margin: -14px -12px; }
-.header .brand { background: #fff; border-radius: 16px; padding: 0 12px; height: 64px; overflow: hidden; }
+.header-bar { background: #fff; border-bottom: 1px solid var(--line); }
+.logo { width: 150px; height: auto; margin: -12px -14px; }
 .brand-dark .logo { width: 150px; margin: -16px -14px -12px; }
 .brand-text { font-size: 19px; font-weight: 500; letter-spacing: -.01em; }
 .brand-text b { font-weight: 800; }
 .brand-dark { color: var(--navy); }
-.nav { display: flex; gap: 36px; font-size: 15px; font-weight: 600; color: rgba(255,255,255,.82); }
-.nav a:hover { color: #fff; }
+.nav { display: flex; gap: 36px; font-size: 15px; font-weight: 600; color: var(--ink-2); }
+.nav a:hover { color: var(--navy); }
 .header-cta { display: flex; align-items: center; gap: 22px; }
-.phone { font-weight: 700; font-size: 15px; }
+.phone { font-weight: 700; font-size: 15px; color: var(--navy); }
 
 .hero {
   display: grid; grid-template-columns: 1fr 340px; gap: 48px; align-items: end;
-  padding-top: 96px; padding-bottom: 72px;
+  padding-top: 80px; padding-bottom: 72px;
 }
 .hero h1 {
   font-size: clamp(44px, 6.6vw, 96px);
@@ -232,8 +232,7 @@ a { color: inherit; text-decoration: none; }
   .about-media { grid-template-columns: 1fr; }
   .owner { max-width: 320px; }
   .facts { grid-template-columns: repeat(3, 1fr); }
-  .header .brand { height: 56px; }
-  .logo { width: 116px; }
+  .logo { width: 120px; margin: -10px -11px; }
   .about-text h2 { font-size: 34px; }
   .about-text .lead { font-size: 18px; }
 
