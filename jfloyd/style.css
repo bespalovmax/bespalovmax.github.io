@@ -216,7 +216,7 @@ a { color: inherit; text-decoration: none; }
   .hcard-photo figcaption span { display: none; }
   .hcard-photo figcaption b { font-size: 14px; }
   .hcard-stat { padding: 16px; }
-  .hcard-stat .big { font-size: 32px; }
+  .hcard-stat .big { font-size: 25px; }
   .hcard-stat .muted { font-size: 12.5px; }
 
   .section { padding: 80px 20px 0; }
